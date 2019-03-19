@@ -1,0 +1,66 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": ["null", "string"]
+    },
+    "name": {
+      "type": ["null", "string"]
+    },
+    "description": {
+      "type": ["null", "string"]
+    },
+    "price": {
+      "type": ["null", "integer"]
+    },
+    "period": {
+      "type": ["null", "integer"]
+    },
+    "period_unit": {
+      "type": ["null", "string"]
+    },
+    "trial_period": {
+      "type": ["null", "integer"]
+    },
+    "trial_period_unit": {
+      "type": ["null", "string"]
+    },
+    "charge_model": {
+      "type": ["null", "string"]
+    },
+    "free_quantity": {
+      "type": ["null", "integer"]
+    },
+    "setup_cost": {
+      "type": ["null", "integer"]
+    },
+    "status": {
+      "type": ["null", "string"]
+    },
+    "billing_cycles": {
+      "type": ["null", "integer"]
+    },
+    "redirect_url": {
+      "type": ["null", "string"]
+    },
+    "sku": {
+      "type": ["null", "string"]
+    },
+    "updated_at": {
+      "type": ["null", "string"],
+      "format": "date-time"
+    },
+    "invoice_notes": {
+      "type": ["null", "string"]
+    },
+    "taxable": {
+      "type": ["null", "boolean"]
+    },
+    "tax_profile_id": {
+      "type": ["null", "string"]
+    },
+    "meda_data": {
+      "type": ["null", "object"]
+    }
+  }
+}

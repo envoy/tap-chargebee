@@ -1,0 +1,42 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": ["null", "string"]
+    },
+    "occurred_at": {
+      "type": ["null", "string"],
+      "format": "date-time"
+    },
+    "updated_at": {
+      "type": ["null", "string"],
+      "format": "date-time"
+    },
+    "source": {
+      "type": ["null", "string"]
+    },
+    "user": {
+      "type": ["null", "string"]
+    },
+    "event_type": {
+      "type": ["null", "string"]
+    },
+    "content": {
+      "type": "object",
+      "properties" : {
+        "customer": {
+          "type": "object"
+        },
+        "subscription": {
+          "type": "object"
+        },
+        "plan": {
+          "type": "object"
+        },
+        "invoice": {
+          "type": "object"
+        }
+      }
+    }
+  }
+}
