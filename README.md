@@ -33,7 +33,8 @@ This tap:
    ```json
     {
         "start_date": "2010-01-01",
-        "api_key": "<Chargebee API Key>"
+        "api_key": "<Chargebee API Key>",
+        "site": "<Chargebee Site>"
     }
     ```
 
@@ -41,6 +42,8 @@ This tap:
    (for those resources that support this).
 
    The `api_key` is the API key for your Chargebee site.
+
+   The `site` parameter represents the name of your specific Chargebee site (e.g. `https://{site}.chargebee.com/api/v2/subscriptions`)
 
 4. Run the Tap in Discovery Mode
 
