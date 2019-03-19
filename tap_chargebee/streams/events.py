@@ -13,4 +13,4 @@ class EventsStream(BaseChargebeeStream):
     API_METHOD = 'GET'
 
     def get_url(self):
-        return 'https://envoyinc.chargebee.com/api/v2/events'
+        return 'https://{}.chargebee.com/api/v2/events'.format(self.config.get('site'))

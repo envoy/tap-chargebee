@@ -13,4 +13,4 @@ class SubscriptionsStream(BaseChargebeeStream):
     API_METHOD = 'GET'
 
     def get_url(self):
-        return 'https://envoyinc.chargebee.com/api/v2/subscriptions'
+        return 'https://{}.chargebee.com/api/v2/subscriptions'.format(self.config.get('site'))

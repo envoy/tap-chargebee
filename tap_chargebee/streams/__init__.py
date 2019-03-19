@@ -8,10 +8,10 @@ from .transactions import TransactionsStream
 
 AVAILABLE_STREAMS = [
     CouponsStream,
-    # CustomersStream,
-    # EventsStream,
-    # InvoicesStream,
-    PlansStream
-    # SubscriptionsStream,
-    # TransactionsStream
+    CustomersStream,
+    EventsStream,
+    InvoicesStream,
+    PlansStream,
+    SubscriptionsStream,
+    TransactionsStream
 ]
