@@ -12,6 +12,6 @@ AVAILABLE_STREAMS = [
     InvoicesStream,
     PlansStream,
     SubscriptionsStream,
-    TransactionsStream
-    #EventsStream
+    TransactionsStream,
+    EventsStream
 ]

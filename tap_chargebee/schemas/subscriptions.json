@@ -102,6 +102,30 @@
     "deleted": {
       "type": ["null", "boolean"]
     },
+    "base_currency_code": {
+      "type": ["null", "string"]
+    },
+    "due_invoices_count": {
+      "type": ["null", "integer"]
+    },
+    "exchange_rate": {
+      "type": ["null", "number"]
+    },
+    "has_scheduled_changes": {
+      "type": ["null", "boolean"]
+    },
+    "plan_amount": {
+      "type": ["null", "integer"]
+    },
+    "plan_free_quantity": {
+      "type": ["null", "integer"]
+    },
+    "resource_version": {
+      "type": ["null", "integer"]
+    },
+    "object": {
+      "type": ["null", "string"]
+    },
     "addons": {
       "type": ["null", "array"],
       "items": {
@@ -122,6 +146,53 @@
           },
           "remaining_billing_cycles": {
             "type": ["null", "integer"]
+          },
+          "object": {
+            "type": ["null", "string"]
+          }
+        }
+      }
+    },
+    "event_based_addons": {
+      "type": ["null", "array"],
+      "items": {
+        "type": ["null", "object"],
+        "properties": {
+          "id": {
+            "type": ["null", "string"]
+          },
+          "quantity": {
+            "type": ["null", "integer"]
+          },
+          "unit_price": {
+            "type": ["null", "integer"]
+          },
+          "on_event": {
+            "type": ["null", "string"]
+          },
+          "charge_once": {
+            "type": ["null", "boolean"]
+          },
+          "object": {
+            "type": ["null", "string"]
+          }
+        }
+      }
+    },
+    "charged_event_based_addons": {
+      "type": ["null", "array"],
+      "items": {
+        "type": ["null", "object"],
+        "properties": {
+          "id": {
+            "type": ["null", "string"]
+          },
+          "last_charged_at": {
+            "type": ["null", "string"],
+            "format": "date-time"
+          },
+          "object": {
+            "type": ["null", "string"]
           }
         }
       }
@@ -142,6 +213,9 @@
             "type": ["null", "integer"]
           },
           "coupon_code": {
+            "type": ["null", "string"]
+          },
+          "object": {
             "type": ["null", "string"]
           }
         }

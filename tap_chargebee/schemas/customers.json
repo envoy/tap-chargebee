@@ -78,6 +78,27 @@
     "cf_company_id": {
       "type": ["null","integer"]
     },
+    "allow_direct_debit": {
+      "type": ["null", "boolean"]
+    },
+    "card_status": {
+      "type": ["null", "string"]
+    },
+    "object": {
+      "type": ["null", "string"]
+    },
+    "pii_cleared": {
+      "type": ["null", "string"]
+    },
+    "preferred_currency_code": {
+      "type": ["null", "string"]
+    },
+    "resource_version": {
+      "type": ["null", "integer"]
+    },
+    "taxability": {
+      "type": ["null", "string"]
+    },
     "billing_address": {
       "type": ["null","object"],
       "properties": {
@@ -190,6 +211,9 @@
           },
           "send_billing_email": {
             "type": ["null", "string"]
+          },
+          "object": {
+            "type": ["null", "string"]
           }
         }
       }
@@ -210,6 +234,12 @@
           "type": ["null", "string"]
         },
         "reference_id": {
+          "type": ["null", "string"]
+        },
+        "gateway_account_id": {
+          "type": ["null", "string"]
+        },
+        "object": {
           "type": ["null", "string"]
         }
       }

@@ -83,6 +83,21 @@
     "deleted": {
       "type": ["null", "boolean"]
     },
+    "exchange_rate": {
+      "type": ["null", "number"]
+    },
+    "base_currency_code": {
+      "type": ["null", "string"]
+    },
+    "resource_version": {
+      "type": ["null", "integer"]
+    },
+    "object": {
+      "type": ["null", "string"]
+    },
+    "refunded_txn_id": {
+      "type": ["null", "string"]
+    },
     "linked_invoices": {
       "type": ["null", "array"],
       "items": {

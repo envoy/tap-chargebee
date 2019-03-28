@@ -58,9 +58,6 @@
     },
     "tax_profile_id": {
       "type": ["null", "string"]
-    },
-    "meda_data": {
-      "type": ["null", "object"]
     }
   }
 }

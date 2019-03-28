@@ -8,10 +8,6 @@
       "type": ["null", "string"],
       "format": "date-time"
     },
-    "updated_at": {
-      "type": ["null", "string"],
-      "format": "date-time"
-    },
     "source": {
       "type": ["null", "string"]
     },
@@ -21,20 +17,35 @@
     "event_type": {
       "type": ["null", "string"]
     },
+    "api_version": {
+      "type": ["null", "string"]
+    },
+    "object": {
+      "type": ["null", "string"]
+    },
+    "webhook_status": {
+      "type": ["null", "string"]
+    },
     "content": {
-      "type": "object",
+      "type": ["null", "object"],
       "properties" : {
         "customer": {
-          "type": "object"
+          "$ref": "customers.json"
         },
         "subscription": {
-          "type": "object"
+          "$ref": "subscriptions.json"
         },
         "plan": {
-          "type": "object"
+          "$ref": "plans.json"
         },
         "invoice": {
-          "type": "object"
+          "$ref": "invoices.json"
+        },
+        "coupon": {
+          "$ref": "coupons.json"
+        },
+        "transaction": {
+          "$ref": "transactions.json"
         }
       }
     }

@@ -97,10 +97,12 @@ class BaseChargebeeStream(BaseStream):
         bookmark_date_posix = int(bookmark_date.timestamp())
 
         # Create params for filtering
-        if self.ENTITY == 'events':
+        if self.ENTITY == 'event':
             params = {"occurred_at[after]": bookmark_date_posix}
+            bookmark_key = 'occurred_at'
         else:
             params = {"updated_at[after]": bookmark_date_posix}
+            bookmark_key = 'updated_at'
 
         LOGGER.info("Querying {} starting at {}".format(table, bookmark_date))
 
@@ -122,7 +124,7 @@ class BaseChargebeeStream(BaseStream):
                 for item in to_write:
                     max_date = max(
                         max_date,
-                        parse(item.get('updated_at'))
+                        parse(item.get(bookmark_key))
                     )
 
             self.state = incorporate(
