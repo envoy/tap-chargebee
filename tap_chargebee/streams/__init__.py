@@ -9,9 +9,9 @@ from .transactions import TransactionsStream
 AVAILABLE_STREAMS = [
     CouponsStream,
     CustomersStream,
-    EventsStream,
     InvoicesStream,
     PlansStream,
     SubscriptionsStream,
     TransactionsStream
+    #EventsStream
 ]
