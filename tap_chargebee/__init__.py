@@ -13,16 +13,19 @@ class ChargebeeRunner(tap_framework.Runner):
 @singer.utils.handle_top_exception(LOGGER)
 def main():
     args = singer.utils.parse_args(
-        required_config_keys=['api_key', 'start_date'])
+        required_config_keys=['api_key', 'start_date']
+        )
 
     client = tap_chargebee.client.ChargebeeClient(args.config)
 
     runner = ChargebeeRunner(
-        args, client, tap_chargebee.streams.AVAILABLE_STREAMS)
+        args, client, tap_chargebee.streams.AVAILABLE_STREAMS
+        )
 
     if args.discover:
         runner.do_discover()
     else:
+        # import pdb; pdb.set_trace()
         runner.do_sync()
 
 

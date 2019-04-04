@@ -1,0 +1,105 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": ["null", "string"]
+    },
+    "name": {
+      "type": ["null", "string"]
+    },
+    "invoice_name": {
+      "type": ["null", "string"]
+    },
+    "description": {
+      "type": ["null", "string"]
+    },
+    "pricing_model": {
+      "type": ["null", "string"]
+    },
+    "charge_type": {
+      "type": ["null", "string"]
+    },
+    "price": {
+      "type": ["null", "integer"]
+    },
+    "currency_code": {
+      "type": ["null", "string"]
+    },
+    "currency_code": {
+      "type": ["null", "string"]
+    },
+    "period_unit": {
+      "type": ["null", "string"]
+    },
+    "unit": {
+      "type": ["null", "string"]
+    },
+    "status": {
+      "type": ["null", "string"]
+    },
+    "archived_at": {
+      "type": ["null", "string"],
+      "format": "date-time"
+    },
+    "enabled_in_portal": {
+      "type": ["null", "boolean"]
+    },
+    "tax_code": {
+      "type": ["null", "string"]
+    },
+    "sku": {
+      "type": ["null", "string"]
+    },
+    "accounting_code": {
+      "type": ["null", "string"]
+    },
+    "accouting_category1": {
+      "type": ["null", "string"]
+    },
+    "accouting_category2": {
+      "type": ["null", "string"]
+    },
+    "is_shippable": {
+      "type": ["null", "boolean"]
+    },
+    "shipping_frequency_period": {
+      "type": ["null", "integer"]
+    },
+    "shipping_frequency_period_unit": {
+      "type": ["null", "integer"]
+    },
+    "resource_version": {
+      "type": ["null", "integer"]
+    },
+    "updated_at": {
+      "type": ["null", "string"],
+      "format": "date-time"
+    },
+    "invoice_notes": {
+      "type": ["null", "string"]
+    },
+    "taxable": {
+      "type": ["null", "boolean"]
+    },
+    "tax_profile_id": {
+      "type": ["null", "string"]
+    },
+    "tiers": {
+      "type": ["null", "array"],
+      "items": {
+        "type": ["null","object"],
+        "properties": {
+          "starting_unit": {
+            "type": ["null", "integer"]
+          },
+          "ending_unit": {
+            "type": ["null", "integer"]
+          },
+          "price ": {
+            "type": ["null", "integer"]
+          }
+        }
+      }
+    }
+  }
+}

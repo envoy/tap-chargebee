@@ -1,5 +1,7 @@
 config/
+virtualenvs/
 catalog.json
+config.json
 state.json
 *.sublime-*
 .python-version
