@@ -107,7 +107,6 @@ class BaseChargebeeStream(BaseStream):
         LOGGER.info("Querying {} starting at {}".format(table, bookmark_date))
 
         while not done:
-            # import pdb; pdb.set_trace()
             max_date = bookmark_date
 
             response = self.client.make_request(
@@ -118,7 +117,6 @@ class BaseChargebeeStream(BaseStream):
             to_write = self.get_stream_data(response.get('list'))
 
             with singer.metrics.record_counter(endpoint=table) as ctr:
-                import pdb; pdb.set_trace()
                 singer.write_records(table, to_write)
 
                 ctr.increment(amount=len(to_write))
