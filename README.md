@@ -56,7 +56,9 @@ This tap:
 
 5. Run the Tap in Sync Mode
 
+    ```bash
     tap-chargebee --config config.json --catalog catalog.json
+    ```
 
 ---
 
