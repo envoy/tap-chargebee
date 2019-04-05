@@ -2,16 +2,20 @@
   "type": "object",
   "properties": {
     "id": {
-      "type": ["null", "string"]
+      "type": ["null", "string"],
+      "maxLength": 100
     },
     "name": {
-      "type": ["null", "string"]
+      "type": ["null", "string"],
+      "maxLength": 50
     },
     "invoice_name": {
-      "type": ["null", "string"]
+      "type": ["null", "string"],
+      "maxLength": 100
     },
     "description": {
-      "type": ["null", "string"]
+      "type": ["null", "string"],
+      "maxLength": 500
     },
     "pricing_model": {
       "type": ["null", "string"]
@@ -20,19 +24,23 @@
       "type": ["null", "string"]
     },
     "price": {
-      "type": ["null", "integer"]
+      "type": ["null", "integer"],
+      "minimum": 0
     },
     "currency_code": {
-      "type": ["null", "string"]
+      "type": ["null", "string"],
+      "maxLength": 3
     },
-    "currency_code": {
-      "type": ["null", "string"]
+    "period": {
+      "type": ["null", "integer"],
+      "minimum": 1
     },
     "period_unit": {
       "type": ["null", "string"]
     },
     "unit": {
-      "type": ["null", "string"]
+      "type": ["null", "string"],
+      "maxLength": 30
     },
     "status": {
       "type": ["null", "string"]
@@ -45,28 +53,34 @@
       "type": ["null", "boolean"]
     },
     "tax_code": {
-      "type": ["null", "string"]
+      "type": ["null", "string"],
+      "maxLength": 50
     },
     "sku": {
-      "type": ["null", "string"]
+      "type": ["null", "string"],
+      "maxLength": 100
     },
     "accounting_code": {
-      "type": ["null", "string"]
+      "type": ["null", "string"],
+      "maxLength": 100
     },
     "accouting_category1": {
-      "type": ["null", "string"]
+      "type": ["null", "string"],
+      "maxLength": 100
     },
     "accouting_category2": {
-      "type": ["null", "string"]
+      "type": ["null", "string"],
+      "maxLength": 100
     },
     "is_shippable": {
       "type": ["null", "boolean"]
     },
     "shipping_frequency_period": {
-      "type": ["null", "integer"]
+      "type": ["null", "integer"],
+      "minimum": 1
     },
     "shipping_frequency_period_unit": {
-      "type": ["null", "integer"]
+      "type": ["null", "string"]
     },
     "resource_version": {
       "type": ["null", "integer"]
@@ -76,12 +90,23 @@
       "format": "date-time"
     },
     "invoice_notes": {
-      "type": ["null", "string"]
+      "type": ["null", "string"],
+      "maxLength": 1000
     },
     "taxable": {
       "type": ["null", "boolean"]
     },
     "tax_profile_id": {
+      "type": ["null", "string"],
+      "maxLength": 50
+    },
+    "object": {
+      "type": ["null", "string"]
+    },
+    "type": {
+      "type": ["null", "string"]
+    },
+    "meta_data": {
       "type": ["null", "string"]
     },
     "tiers": {
@@ -90,13 +115,15 @@
         "type": ["null","object"],
         "properties": {
           "starting_unit": {
-            "type": ["null", "integer"]
+            "type": ["null", "integer"],
+            "minimum": 1
           },
           "ending_unit": {
             "type": ["null", "integer"]
           },
           "price ": {
-            "type": ["null", "integer"]
+            "type": ["null", "integer"],
+            "minimum": 0
           }
         }
       }
