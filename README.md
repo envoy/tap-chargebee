@@ -48,7 +48,7 @@ This tap:
 4. Run the Tap in Discovery Mode
 
     ```bash
-    tap-chargebee --config config.json -discover
+    tap-chargebee --config config.json --discover > catalog.json
     ```
 
    See the Singer docs on discovery mode
@@ -56,7 +56,9 @@ This tap:
 
 5. Run the Tap in Sync Mode
 
+    ```bash
     tap-chargebee --config config.json --catalog catalog.json
+    ```
 
 ---
 
