@@ -18,11 +18,13 @@ def main():
     client = tap_chargebee.client.ChargebeeClient(args.config)
 
     runner = ChargebeeRunner(
-        args, client, tap_chargebee.streams.AVAILABLE_STREAMS)
+        args, client, tap_chargebee.streams.AVAILABLE_STREAMS
+        )
 
     if args.discover:
         runner.do_discover()
     else:
+        # import pdb; pdb.set_trace()
         runner.do_sync()
 
 
