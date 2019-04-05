@@ -9,13 +9,13 @@ from .subscriptions import SubscriptionsStream
 from .transactions import TransactionsStream
 
 AVAILABLE_STREAMS = [
-    AddonsStream
-    # CouponsStream,
-    # CustomersStream,
-    # InvoicesStream,
-    # PaymentSourcesStream
-    # PlansStream,
-    # SubscriptionsStream,
-    # TransactionsStream,
-    # EventsStream
+    AddonsStream,
+    CouponsStream,
+    CustomersStream,
+    InvoicesStream,
+    PaymentSourcesStream,
+    PlansStream,
+    SubscriptionsStream,
+    TransactionsStream,
+    EventsStream
 ]
