@@ -1,5 +1,6 @@
 {
   "type": ["null", "object"],
+  "additionalProperties": false,
   "properties": {
     "first_name": {
       "type": ["null", "string"],

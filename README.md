@@ -8,13 +8,16 @@ This tap:
 
 - Pulls raw data from the [Chargebee API](https://apidocs.chargebee.com/docs/api)
 - Extracts the following resources:
+  - [Addons](https://apidocs.chargebee.com/docs/api/addons)
   - [Coupons](https://apidocs.chargebee.com/docs/api/coupons)
   - [Customers](https://apidocs.chargebee.com/docs/api/customers)
   - [Events](https://apidocs.chargebee.com/docs/api/events)
   - [Invoices](https://apidocs.chargebee.com/docs/api/invoices)
+  - [Payment Sources](https://apidocs.chargebee.com/docs/api/payment_sources)
   - [Plans](https://apidocs.chargebee.com/docs/api/plans)
   - [Subscriptions](https://apidocs.chargebee.com/docs/api/subscriptions)
   - [Transactions](https://apidocs.chargebee.com/docs/api/transactions)
+  - [Virtual Bank Accounts](https://apidocs.chargebee.com/docs/api/virtual_bank_accounts)
 - Outputs the schema for each resource
 - Incrementally pulls data based on the input state
 
