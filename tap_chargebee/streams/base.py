@@ -120,12 +120,13 @@ class BaseChargebeeStream(BaseStream):
                 singer.write_records(table, to_write)
 
                 ctr.increment(amount=len(to_write))
-
+                
                 for item in to_write:
-                    max_date = max(
-                        max_date,
-                        parse(item.get(bookmark_key))
-                    )
+                    if item.get(bookmark_key) is not None:
+                        max_date = max(
+                            max_date,
+                            parse(item.get(bookmark_key))
+                        )
 
             self.state = incorporate(
                 self.state, table, 'bookmark_date', max_date)

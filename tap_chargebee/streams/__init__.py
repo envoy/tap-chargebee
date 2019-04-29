@@ -8,12 +8,24 @@ from .plans import PlansStream
 from .subscriptions import SubscriptionsStream
 from .transactions import TransactionsStream
 from .virtual_bank_accounts import VirtualBankAccountsStream
+from .credit_notes import CreditNoteStream
+from .comments import CommentsStream
+from .coupon_codes import CouponCodesStream
+from .coupon_sets import CouponSetsStream
+from .gifts import GiftsStream
+from .orders import OrdersStream
 
 AVAILABLE_STREAMS = [
     AddonsStream,
+    CommentsStream,
     CouponsStream,
+    CouponCodesStream,
+    CouponSetsStream,
+    CreditNoteStream,
     CustomersStream,
+    GiftsStream,
     InvoicesStream,
+    OrdersStream,
     PaymentSourcesStream,
     PlansStream,
     SubscriptionsStream,
