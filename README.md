@@ -10,6 +10,7 @@ This tap:
 - Extracts the following resources:
   - [Addons](https://apidocs.chargebee.com/docs/api/addons)
   - [Coupons](https://apidocs.chargebee.com/docs/api/coupons)
+  - [Credit Notes](https://apidocs.chargebee.com/docs/api/credit_notes)
   - [Customers](https://apidocs.chargebee.com/docs/api/customers)
   - [Events](https://apidocs.chargebee.com/docs/api/events)
   - [Invoices](https://apidocs.chargebee.com/docs/api/invoices)
