@@ -1,6 +1,7 @@
 import time
 import requests
 import singer
+import json
 
 from tap_framework.client import BaseClient
 
@@ -62,8 +63,15 @@ class ChargebeeClient(BaseClient):
             time.sleep(base_backoff)
 
             return self.make_request(url, method, base_backoff * 2, body)
-
+            
         if response.status_code != 200:
-            raise RuntimeError(response.text)
-
+            LOGGER.error(response.text)
+            errorResp = json.loads(response.text)
+            LOGGER.info(errorResp["message"])
+            if errorResp["message"] != "Sorry, Please enable order management site setting to use this API.":
+                raise RuntimeError(response.text)
+            else:
+                LOGGER.info("Order module not enabled. Moving on...")
+                return json.loads("{\"list\":[]}");
+            
         return response.json()
