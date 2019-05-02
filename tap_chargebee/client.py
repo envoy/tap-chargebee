@@ -67,8 +67,8 @@ class ChargebeeClient(BaseClient):
         if response.status_code != 200:
             LOGGER.error(response.text)
             errorResp = json.loads(response.text)
-            LOGGER.info(errorResp["message"])
-            if errorResp["message"] != "Sorry, Please enable order management site setting to use this API.":
+            LOGGER.info(errorResp["error_code"])
+            if errorResp["error_code"] != "order_management_not_enabled" and errorResp["api_error_code"] == "configuration_incompatible":
                 raise RuntimeError(response.text)
             else:
                 LOGGER.info("Order module not enabled. Moving on...")
