@@ -94,8 +94,7 @@
             "maxLength": 40
           },
           "subscription_id": {
-            "type": ["null", "string"],
-            "maxLength": 3
+            "type": ["null", "string"]
           },
           "date_from": {
             "type": ["null", "string"],
