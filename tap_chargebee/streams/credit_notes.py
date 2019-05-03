@@ -1,7 +1,7 @@
 from tap_chargebee.streams.base import BaseChargebeeStream
 
 
-class CreditNoteStream(BaseChargebeeStream):
+class CreditNotesStream(BaseChargebeeStream):
     TABLE = 'credit_notes'
     ENTITY = 'credit_note'
     KEY_PROPERTIES = ['id']
