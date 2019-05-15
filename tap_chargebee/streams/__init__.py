@@ -9,9 +9,10 @@ from .plans import PlansStream
 from .subscriptions import SubscriptionsStream
 from .transactions import TransactionsStream
 from .virtual_bank_accounts import VirtualBankAccountsStream
-from .credit_notes import CreditNoteStream
+from .credit_notes import CreditNotesStream
 from .gifts import GiftsStream
 from .orders import OrdersStream
+from.promotional_credits import PromotionalCreditsStream
 
 AVAILABLE_STREAMS = [
     AddonsStream,
@@ -22,6 +23,7 @@ AVAILABLE_STREAMS = [
     InvoicesStream,
     OrdersStream,
     PaymentSourcesStream,
+    PromotionalCreditsStream,
     PlansStream,
     SubscriptionsStream,
     TransactionsStream,
