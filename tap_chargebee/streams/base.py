@@ -15,7 +15,7 @@ class BaseChargebeeStream(BaseStream):
         singer.write_schema(
             self.catalog.stream,
             self.catalog.schema.to_dict(),
-            key_properties=self.catalog.key_properties,
+            key_properties=self.KEY_PROPERTIES,
             bookmark_properties=self.BOOKMARK_PROPERTIES)
 
     def generate_catalog(self):
@@ -57,8 +57,6 @@ class BaseChargebeeStream(BaseStream):
         return [{
             'tap_stream_id': self.TABLE,
             'stream': self.TABLE,
-            'key_properties': self.KEY_PROPERTIES,
-            'bookmark_properties': self.BOOKMARK_PROPERTIES,
             'schema': self.get_schema(),
             'metadata': singer.metadata.to_list(mdata)
         }]
