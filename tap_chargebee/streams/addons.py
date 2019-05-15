@@ -4,7 +4,7 @@ from tap_chargebee.streams.base import BaseChargebeeStream
 class AddonsStream(BaseChargebeeStream):
     TABLE = 'addons'
     ENTITY = 'addon'
-    REPLICATION_METHOD = 'FULL_TABLE'
+    REPLICATION_METHOD = 'INCREMENTAL'
     REPLICATION_KEY = 'updated_at'
     KEY_PROPERTIES = ['id']
     BOOKMARK_PROPERTIES = ['updated_at']
