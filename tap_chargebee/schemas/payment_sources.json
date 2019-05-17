@@ -52,7 +52,7 @@
       "type": ["null", "string"]
     },
     "card": {
-      "$ref": "cards.json"
+      "$ref": "cards.json#/"
     },
     "bank_account": {
       "type": ["null", "object"],
