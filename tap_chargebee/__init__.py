@@ -24,7 +24,6 @@ def main():
     if args.discover:
         runner.do_discover()
     else:
-        # import pdb; pdb.set_trace()
         runner.do_sync()
 
 
