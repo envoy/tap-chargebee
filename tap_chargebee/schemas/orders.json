@@ -2,7 +2,7 @@
 	"type": ["null", "object"],
 	"properties": {
 		"id": {
-			"type": ["null", ""]
+			"type": ["null", "string"]
 		},
 		"document_number": {
 			"type": ["null", "string"]

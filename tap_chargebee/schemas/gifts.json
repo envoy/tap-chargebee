@@ -65,7 +65,9 @@
 		},
 		"gift_timelines": {
 			"type": ["null", "array"],
-			"properties": {
+			"items": {
+				"type": ["null", "object"],
+				"properties": {
 				"status": {
 					"type": ["null", "string"]
 				},
@@ -73,6 +75,7 @@
 					"type": ["null", "string"],
 					"format": "date-time"
 				}
+			}
 			}
 		}
 	}
