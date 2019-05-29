@@ -15,6 +15,7 @@ from .orders import OrdersStream
 from.promotional_credits import PromotionalCreditsStream
 
 AVAILABLE_STREAMS = [
+    EventsStream,
     AddonsStream,
     CouponsStream,
     CreditNotesStream,
@@ -27,6 +28,5 @@ AVAILABLE_STREAMS = [
     PlansStream,
     SubscriptionsStream,
     TransactionsStream,
-    EventsStream,
     VirtualBankAccountsStream
 ]
