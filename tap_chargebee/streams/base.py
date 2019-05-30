@@ -1,9 +1,11 @@
 import singer
 import json
+import os
 
 from .util import Util
 from dateutil.parser import parse
 from tap_framework.streams import BaseStream
+from tap_framework.schemas import load_schema_by_name
 from tap_framework.config import get_config_start_date
 from tap_chargebee.state import get_last_record_value_for_table, incorporate, \
     save_state
@@ -56,10 +58,18 @@ class BaseChargebeeStream(BaseStream):
                 inclusion
             )
 
+        cards = singer.utils.load_json(
+            os.path.normpath(
+                os.path.join(
+                    self.get_class_path(),
+                    '../schemas/{}.json'.format("cards"))))
+
+        refs = {"cards.json": cards}
+
         return [{
             'tap_stream_id': self.TABLE,
             'stream': self.TABLE,
-            'schema': self.get_schema(),
+            'schema': singer.resolve_schema_references(schema, refs),
             'metadata': singer.metadata.to_list(mdata)
         }]
 
