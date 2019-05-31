@@ -2930,6 +2930,7 @@
         "unbilled_charges": {
           "type": ["null", "array"],
           "items": {
+            "type": ["null","object"],
             "properties": {
               "id": {
                 "type": ["null", "string"],
