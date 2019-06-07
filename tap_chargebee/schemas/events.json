@@ -151,6 +151,9 @@
             "meta_data": {
               "type": ["null", "string"]
             },
+            "custom_fields": {
+              "type": ["null", "string"]
+            },
             "tiers": {
               "type": ["null", "array"],
               "items": {
@@ -753,6 +756,9 @@
               "type": ["null", "string"]
             },
             "exemption_details": {
+              "type": ["null", "string"]
+            },
+            "custom_fields": {
               "type": ["null", "string"]
             },
             "billing_address": {
@@ -2195,6 +2201,9 @@
             "meta_data": {
               "type": ["null", "string"]
             },
+            "custom_fields": {
+              "type": ["null", "string"]
+            },
             "tiers": {
               "type": ["null", "array"],
               "items": {
@@ -2443,6 +2452,9 @@
               "type": ["null", "integer"]
             },
             "meta_data": {
+              "type": ["null", "string"]
+            },
+            "custom_fields": {
               "type": ["null", "string"]
             },
             "addons": {

@@ -119,6 +119,9 @@
     "meta_data": {
       "type": ["null", "string"]
     },
+    "custom_fields": {
+      "type": ["null", "string"]
+    },
     "tiers": {
       "type": ["null", "array"],
       "items": {

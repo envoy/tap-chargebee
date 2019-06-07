@@ -94,9 +94,6 @@
     "preferred_currency_code": {
       "type": ["null", "string"]
     },
-    "resource_version": {
-      "type": ["null", "integer"]
-    },
     "taxability": {
       "type": ["null", "string"]
     },
@@ -138,6 +135,9 @@
       "type": ["null", "string"]
     },
     "exemption_details": {
+      "type": ["null", "string"]
+    },
+    "custom_fields": {
       "type": ["null", "string"]
     },
     "billing_address": {
