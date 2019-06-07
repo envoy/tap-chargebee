@@ -256,7 +256,7 @@
               "items": {
                 "type": ["null", "string"]
               }
-            }, 
+            },
             "invoice_notes": {
               "type": ["null", "string"]
             },
@@ -2942,6 +2942,7 @@
         "unbilled_charges": {
           "type": ["null", "array"],
           "items": {
+            "type": ["null","object"],
             "properties": {
               "id": {
                 "type": ["null", "string"],
