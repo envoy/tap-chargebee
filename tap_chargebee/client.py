@@ -36,8 +36,7 @@ class ChargebeeClient(BaseClient):
 
         return params
 
-    def make_request(self, url, method, params=None, base_backoff=15,
-                     body=None):
+    def make_request(self, url, method, params=None, body=None):
 
         if params is None:
             params = {}
@@ -52,26 +51,6 @@ class ChargebeeClient(BaseClient):
             params=self.get_params(params),
             json=body)
 
-        # Handle Rate Limiting (429)
-        if response.status_code == 429:
-            if base_backoff > 120:
-                raise RuntimeError('Backed off too many times, exiting!')
+        response.raise_for_status()
 
-            LOGGER.warn('Got a 429, sleeping for {} seconds and trying again'
-                        .format(base_backoff))
-
-            time.sleep(base_backoff)
-
-            return self.make_request(url, method, base_backoff * 2, body)
-            
-        if response.status_code != 200:
-            LOGGER.error(response.text)
-            errorResp = json.loads(response.text)
-            LOGGER.info(errorResp["error_code"])
-            if errorResp["error_code"] != "order_management_not_enabled" and errorResp["api_error_code"] == "configuration_incompatible":
-                raise RuntimeError(response.text)
-            else:
-                LOGGER.info("Order module not enabled. Moving on...")
-                return json.loads("{\"list\":[]}");
-            
         return response.json()
