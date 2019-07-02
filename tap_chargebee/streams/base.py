@@ -71,11 +71,37 @@ class BaseChargebeeStream(BaseStream):
             'metadata': singer.metadata.to_list(mdata)
         }]
 
+    def appendCustomFields(self, record):
+        listOfCustomFieldObj = ['addon', 'plan', 'subscription', 'customer']
+        custom_fields = {}
+        event_custom_fields = {}
+        if self.ENTITY == 'event':
+            content = record['content']
+            words = record['event_type'].split("_")
+            sl = slice(len(words) - 1)
+            content_obj = "_".join(words[sl])     
+            
+            if content_obj in listOfCustomFieldObj:
+                for k in record['content'][content_obj].keys():
+                    if "cf_" in k:
+                        event_custom_fields[k] = record['content'][content_obj][k]
+                record['content'][content_obj]['custom_fields'] = json.dumps(event_custom_fields)    
+        
+
+        for key in record.keys():
+            if "cf_" in key:
+                custom_fields[key] = record[key]
+        if custom_fields:
+            record['custom_fields'] = json.dumps(custom_fields)
+        return record
+
     # This overrides the transform_record method in the Fistown Analytics tap-framework package
     def transform_record(self, record):
         with singer.Transformer(integer_datetime_fmt="unix-seconds-integer-datetime-parsing") as tx:
             metadata = {}
-
+            
+            record = self.appendCustomFields(record)
+                
             if self.catalog.metadata is not None:
                 metadata = singer.metadata.to_map(self.catalog.metadata)
 
@@ -128,8 +154,10 @@ class BaseChargebeeStream(BaseStream):
                 method=api_method,
                 params=params)
 
-            to_write = self.get_stream_data(response.get('list'))
-
+            records = response.get('list')
+            
+            to_write = self.get_stream_data(records)
+            
             if self.ENTITY == 'event':
                 for event in to_write:
                     if event["event_type"] == 'plan_deleted':
@@ -138,7 +166,6 @@ class BaseChargebeeStream(BaseStream):
                         Util.addons.append(event['content']['addon'])
                     elif event['event_type'] == 'coupon_deleted':
                         Util.coupons.append(event['content']['coupon'])
-                
             if self.ENTITY == 'plan':
                 for plan in Util.plans:
                     to_write.append(plan)
@@ -149,6 +176,7 @@ class BaseChargebeeStream(BaseStream):
                 for coupon in Util.coupons:
                     to_write.append(coupon) 
 
+            
             with singer.metrics.record_counter(endpoint=table) as ctr:
                 singer.write_records(table, to_write)
 

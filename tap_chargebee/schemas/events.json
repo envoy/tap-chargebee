@@ -151,6 +151,9 @@
             "meta_data": {
               "type": ["null", "string"]
             },
+            "custom_fields": {
+              "type": ["null", "string"]
+            },
             "tiers": {
               "type": ["null", "array"],
               "items": {
@@ -753,6 +756,9 @@
               "type": ["null", "string"]
             },
             "exemption_details": {
+              "type": ["null", "string"]
+            },
+            "custom_fields": {
               "type": ["null", "string"]
             },
             "billing_address": {
@@ -1944,13 +1950,13 @@
                     },
                     "id": {
                       "type": ["null", "string"]
-                    },
+                    }, 
                     "status": {
                       "type": ["null", "string"]
-                    },
+                    }, 
                     "amount_adjusted": {
                       "type": ["null", "integer"]
-                    },
+                    }, 
                     "amount_refunded": {
                       "type": ["null", "integer"]
                     }
@@ -2193,6 +2199,9 @@
               "type": ["null", "string"]
             },
             "meta_data": {
+              "type": ["null", "string"]
+            },
+            "custom_fields": {
               "type": ["null", "string"]
             },
             "tiers": {
@@ -2443,6 +2452,9 @@
               "type": ["null", "integer"]
             },
             "meta_data": {
+              "type": ["null", "string"]
+            },
+            "custom_fields": {
               "type": ["null", "string"]
             },
             "addons": {
@@ -3419,6 +3431,7 @@
             }
           }
         }
+        
       }
     }
   }
