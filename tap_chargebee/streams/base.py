@@ -78,14 +78,9 @@ class BaseChargebeeStream(BaseStream):
         if self.ENTITY == 'event':
             content = record['content']
             words = record['event_type'].split("_")
-            counter = 1;
-            content_obj = ""
-            for word in words:
-                if counter != len(words):
-                    content_obj = str(content_obj) + word 
-                    if(counter + 1 != len(words)):
-                        content_obj = content_obj + "_"
-                counter = counter + 1
+            sl = slice(len(words) - 1)
+            content_obj = "_".join(words[sl])     
+            
             if content_obj in listOfCustomFieldObj:
                 for k in record['content'][content_obj].keys():
                     if "cf_" in k:
@@ -182,26 +177,6 @@ class BaseChargebeeStream(BaseStream):
                     to_write.append(coupon) 
 
             
-
-            if self.ENTITY == 'event':
-                for event in to_write:
-                    if event["event_type"] == 'plan_deleted':
-                        Util.plans.append(event['content']['plan'])
-                    elif event['event_type'] == 'addon_deleted':
-                        Util.addons.append(event['content']['addon'])
-                    elif event['event_type'] == 'coupon_deleted':
-                        Util.coupons.append(event['content']['coupon'])
-                
-            if self.ENTITY == 'plan':
-                for plan in Util.plans:
-                    to_write.append(plan)
-            if self.ENTITY == 'addon':
-                for addon in Util.addons:
-                    to_write.append(addon)
-            if self.ENTITY == 'coupon':
-                for coupon in Util.coupons:
-                    to_write.append(coupon) 
-
             with singer.metrics.record_counter(endpoint=table) as ctr:
                 singer.write_records(table, to_write)
 
