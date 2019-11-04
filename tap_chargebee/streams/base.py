@@ -1,4 +1,5 @@
 import singer
+import time
 
 from dateutil.parser import parse
 from tap_framework.streams import BaseStream
@@ -107,6 +108,8 @@ class BaseChargebeeStream(BaseStream):
         LOGGER.info("Querying {} starting at {}".format(table, bookmark_date))
 
         while not done:
+            # sleep for 30 seconds to prevent rate limiting
+            time.sleep(30)
             max_date = bookmark_date
 
             response = self.client.make_request(
