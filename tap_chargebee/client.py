@@ -41,6 +41,8 @@ class ChargebeeClient(BaseClient):
         if params is None:
             params = {}
 
+        # sleep for 2 seconds to prevent rate limiting
+        time.sleep(2)
         LOGGER.info("Making {} request to {}".format(method, url))
 
         response = requests.request(
