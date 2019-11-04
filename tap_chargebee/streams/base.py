@@ -1,5 +1,4 @@
 import singer
-import time
 
 from dateutil.parser import parse
 from tap_framework.streams import BaseStream
