@@ -1,4 +1,5 @@
 import singer
+import datetime
 
 from dateutil.parser import parse
 from tap_framework.streams import BaseStream
@@ -124,7 +125,7 @@ class BaseChargebeeStream(BaseStream):
                 for item in to_write:
                     max_date = max(
                         max_date,
-                        parse(item.get(bookmark_key))
+                        parse(item.get(bookmark_key)).replace(tzinfo=None)
                     )
 
             self.state = incorporate(
