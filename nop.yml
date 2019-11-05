@@ -1,0 +1,45 @@
+base_version: 0.1
+continuous_integration:
+  publish_build_artifacts: true
+projects:
+  chargebee_to_snowflake:
+    style: python-tox
+    purpose: job
+    job:
+      # 6:00AM in NYC
+      schedule: "2017-08-15T10:00:00.000Z"
+      frequency: PT1H # Every 1 hour
+      timeout: 1200
+    continuous_deployment: no
+    python:
+      command: chargebee_job
+      version: 3.7
+
+    hardware:
+      memory: 256
+      cpu_units: 0.25
+      instance_count: 1
+
+    credential_files:
+      main:
+        source: consumer/chargebee_stitch_job/stitch_api_credentials.json
+        dest: chargebee/stitch_api_credentials.json
+
+    environments:
+      docker-local: null
+      classicqa-useast1-cd:
+        continuous_deployment: no
+        config_files:
+          configuration/chargebeejobs/config.yml:
+            loadPartial: true
+      classicqa-useast1:
+        continuous_deployment: no
+        config_files:
+          configuration/chargebeejobs/config.yml:
+            loadPartial: true
+      biggie-useast1:
+        continuous_deployment: no
+        config_files:
+          configuration/chargebeejobs/config.yml:
+            loadPartial: false
+
