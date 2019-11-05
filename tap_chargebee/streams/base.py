@@ -125,7 +125,7 @@ class BaseChargebeeStream(BaseStream):
                 for item in to_write:
                     max_date = max(
                         max_date,
-                        parse(item.get(bookmark_key)).replace(tzinfo=None)
+                        parse(item.get(bookmark_key))
                     )
 
             self.state = incorporate(
