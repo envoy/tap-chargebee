@@ -38,7 +38,8 @@ This tap:
     {
         "start_date": "2010-01-01",
         "api_key": "<Chargebee API Key>",
-        "site": "<Chargebee Site>"
+        "site": "<Chargebee Site>",
+        "time_between_calls": None
     }
     ```
 

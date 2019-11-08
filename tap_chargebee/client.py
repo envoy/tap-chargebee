@@ -16,6 +16,7 @@ class ChargebeeClient(BaseClient):
         self.api_result_limit = api_result_limit
         self.include_deleted = include_deleted
         self.user_agent = self.config.get('user_agent')
+        self.time_between_calls = self.config.get('time_between_calls', None)
 
     def get_headers(self):
         headers = {}
@@ -41,6 +42,9 @@ class ChargebeeClient(BaseClient):
         if params is None:
             params = {}
 
+        # sleep for desired amount to prevent rate limiting
+        if self.time_between_calls is not None:
+            time.sleep(self.time_between_calls)
         LOGGER.info("Making {} request to {}".format(method, url))
 
         response = requests.request(
