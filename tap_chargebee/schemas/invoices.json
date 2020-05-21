@@ -108,6 +108,9 @@
     "term_finalized": {
       "type": ["null", "boolean"]
     },
+    "payment_owner": {
+      "type": ["null", "string"]
+    },
     "line_items": {
       "type": ["null", "array"],
       "items": {
@@ -117,6 +120,9 @@
             "type": ["null", "string"]
           },
           "subscription_id": {
+            "type": ["null", "string"]
+          },
+          "customer_id": {
             "type": ["null", "string"]
           },
           "date_from": {
@@ -168,6 +174,39 @@
           },
           "object": {
             "type": ["null", "string"]
+          }
+        }
+      }
+    },
+    "dunning_attempts": {
+      "type": [
+        "null",
+        "array"
+      ],
+      "items": {
+        "type": [
+          "null",
+          "object"
+        ],
+        "properties": {
+          "attempt": {
+            "type": ["null", "integer"]
+          },
+          "transaction_id": {
+            "type": ["null", "string"]
+          },
+          "dunning_type": {
+            "type": ["null", "string"]
+          },
+          "created_at": {
+            "type": ["null", "string"],
+            "format": "date-time"
+          },
+          "txn_status": {
+            "type": ["null", "string"]
+          },
+          "txn_amount": {
+            "type": ["null", "integer"]
           }
         }
       }
@@ -451,7 +490,10 @@
         "zip": {
           "type": ["null", "string"]
         },
-        "validation_status,": {
+        "validation_status": {
+          "type": ["null", "string"]
+        },
+        "object": {
           "type": ["null", "string"]
         }
       }

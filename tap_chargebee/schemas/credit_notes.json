@@ -14,11 +14,18 @@
       "type": ["null", "string"],
       "maxLength": 50
     },
+    "base_currency_code": {
+      "type": ["null", "string"],
+      "maxLength": 3
+    },
     "reference_invoice_id": {
       "type": ["null", "string"],
       "maxLength": 50
     },
     "type": {
+      "type": ["null", "string"]
+    },
+    "object": {
       "type": ["null", "string"]
     },
     "reason_code": {
@@ -41,6 +48,12 @@
     "currency_code": {
       "type": ["null", "string"],
       "maxLength": 3
+    },
+    "exchange_rate": {
+      "type": ["null", "integer"]
+    },
+    "fractional_correction": {
+      "type": ["null", "integer"]
     },
     "total": {
       "type": ["null", "integer"],
@@ -94,6 +107,12 @@
             "maxLength": 40
           },
           "subscription_id": {
+            "type": ["null", "string"]
+          },
+          "customer_id": {
+            "type": ["null", "string"]
+          },
+          "object": {
             "type": ["null", "string"]
           },
           "date_from": {

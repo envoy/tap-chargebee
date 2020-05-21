@@ -55,6 +55,14 @@
       "type": ["null", "string"],
       "format": "date-time"
     },
+    "pause_date": {
+      "type": ["null", "string"],
+      "format": "date-time"
+    },
+    "resume_date": {
+      "type": ["null", "string"],
+      "format": "date-time"
+    },
     "remaining_billing_cycles": {
       "type": ["null", "integer"]
     },
@@ -103,7 +111,13 @@
     "deleted": {
       "type": ["null", "boolean"]
     },
+    "override_relationship": {
+      "type": ["null", "boolean"]
+    },
     "base_currency_code": {
+      "type": ["null", "string"]
+    },
+    "created_from_ip": {
       "type": ["null", "string"]
     },
     "due_invoices_count": {
@@ -127,6 +141,9 @@
     "object": {
       "type": ["null", "string"]
     },
+    "meta_data": {
+      "type": ["null", "string"]
+    },
     "addons": {
       "type": ["null", "array"],
       "items": {
@@ -136,6 +153,9 @@
             "type": ["null", "string"]
           },
           "quantity": {
+            "type": ["null", "integer"]
+          },
+          "amount": {
             "type": ["null", "integer"]
           },
           "unit_price": {
@@ -264,7 +284,10 @@
         "zip": {
           "type": ["null", "string"]
         },
-        "validation_status,": {
+        "validation_status": {
+          "type": ["null", "string"]
+        },
+        "object": {
           "type": ["null", "string"]
         }
       }
@@ -313,6 +336,50 @@
         },
         "post_purchase_widget_enabled": {
           "type": ["null", "boolean"]
+        }
+      }
+    },
+    "contract_term": {
+      "type": ["null","object"],
+      "properties": {
+        "id": {
+          "type": ["null", "string"]
+        },
+        "status": {
+          "type": ["null", "string"]
+        },
+        "contract_start": {
+            "type": ["null", "string"],
+            "format": "date-time"
+        },
+        "contract_end": {
+            "type": ["null", "string"],
+            "format": "date-time"
+        },
+        "billing_cycle": {
+          "type": ["null", "integer"]
+        },
+        "action_at_term_end": {
+          "type": ["null", "string"]
+        },
+        "total_contract_value": {
+          "type": ["null", "integer"]
+        },
+        "cancellation_cutoff_period": {
+          "type": ["null", "integer"]
+        },
+        "created_at": {
+            "type": ["null", "string"],
+            "format": "date-time"
+        },
+        "subscription_id": {
+          "type": ["null", "string"]
+        },
+        "remaining_billing_cycles": {
+          "type": ["null", "integer"]
+        },
+        "total_amount_raised": {
+          "type": ["null", "integer"]
         }
       }
     }

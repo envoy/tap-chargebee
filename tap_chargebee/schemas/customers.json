@@ -79,6 +79,27 @@
     "cf_company_id": {
       "type": ["null","integer"]
     },
+    "cf_location_id": {
+      "type": ["null","integer"]
+    },
+    "cf_require_finance_team_intervention": {
+      "type": ["null","string"]
+    },
+    "cf_location_name": {
+      "type": ["null","string"]
+    },
+    "cf_require_vendor_portal": {
+      "type": ["null","string"]
+    },
+    "cf_vendor_portal": {
+      "type": ["null","string"]
+    },
+    "use_default_hierarchy_settings": {
+      "type": ["null","boolean"]
+    },
+    "meta_data": {
+      "type": ["null", "string"]
+    },
     "allow_direct_debit": {
       "type": ["null", "boolean"]
     },
@@ -142,7 +163,10 @@
         "zip": {
           "type": ["null", "string"]
         },
-        "validation_status,": {
+        "validation_status": {
+          "type": ["null", "string"]
+        },
+        "object": {
           "type": ["null", "string"]
         }
       }
@@ -256,7 +280,7 @@
           "excess_payments": {
             "type": ["null", "integer"]
           },
-          "refundable_credits ": {
+          "refundable_credits": {
             "type": ["null", "integer"]
           },
           "unbilled_charges": {
@@ -264,7 +288,127 @@
           },
           "currency_code": {
             "type": ["null", "string"]
+          },
+          "balance_currency_code": {
+            "type": ["null", "string"]
+          },
+          "object": {
+            "type": ["null", "string"]
           }
+        }
+      }
+    },
+    "relationship": {
+      "type": [
+        "null",
+        "object"
+      ],
+      "properties": {
+        "parent_id": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "payment_owner_id": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "root_id": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "invoice_owner_id": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "object": {
+          "type": [
+            "null",
+            "string"
+          ]
+        }
+      }
+    },
+    "parent_account_access": {
+      "type": [
+        "null",
+        "object"
+      ],
+      "properties": {
+        "portal_edit_child_subscriptions": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "portal_download_child_invoices": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "send_subscription_emails": {
+          "type": [
+            "null",
+            "boolean"
+          ]
+        },
+        "send_invoice_emails": {
+          "type": [
+            "null",
+            "boolean"
+          ]
+        },
+        "send_payment_emails": {
+          "type": [
+            "null",
+            "boolean"
+          ]
+        }
+      }
+    },
+    "child_account_access": {
+      "type": [
+        "null",
+        "object"
+      ],
+      "properties": {
+        "portal_edit_subscriptions": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "portal_download_invoices": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "send_subscription_emails": {
+          "type": [
+            "null",
+            "boolean"
+          ]
+        },
+        "send_invoice_emails": {
+          "type": [
+            "null",
+            "boolean"
+          ]
+        },
+        "send_payment_emails": {
+          "type": [
+            "null",
+            "boolean"
+          ]
         }
       }
     }
