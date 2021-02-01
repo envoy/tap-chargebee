@@ -3,6 +3,9 @@ import time
 import json
 import os
 
+import pytz
+from datetime import datetime, timedelta
+
 from .util import Util
 from dateutil.parser import parse
 from tap_framework.streams import BaseStream
@@ -134,21 +137,25 @@ class BaseChargebeeStream(BaseStream):
         # Convert bookmarked start date to POSIX.
         bookmark_date_posix = int(bookmark_date.timestamp())
 
+        to_date = datetime.now(pytz.utc) - timedelta(minutes=5);
+        to_date_posix = int(to_date.timestamp());
+        sync_window_tuple = bookmark_date_posix, to_date_posix;
+        sync_window = str(list(sync_window_tuple));
         # Create params for filtering
         if self.ENTITY == 'event':
-            params = {"occurred_at[after]": bookmark_date_posix}
+            params = {"occurred_at[between]": sync_window}
             bookmark_key = 'occurred_at'
         elif self.ENTITY == 'promotional_credit':
-            params = {"created_at[after]": bookmark_date_posix}
+            params = {"created_at[between]": sync_window}
             bookmark_key = 'created_at'
         else:
-            params = {"updated_at[after]": bookmark_date_posix}
+            params = {"updated_at[between]": sync_window}
             bookmark_key = 'updated_at'
 
         LOGGER.info("Querying {} starting at {}".format(table, bookmark_date))
 
         while not done:
-            max_date = bookmark_date
+            max_date = to_date
 
             response = self.client.make_request(
                 url=self.get_url(),

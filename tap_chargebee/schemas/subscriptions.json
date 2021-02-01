@@ -158,16 +158,16 @@
       "type": ["null", "string"]
     },
     "plan_amount_in_decimal" : {
-      "type": ["null", "String"]
+      "type": ["null", "string"]
     },
     "plan_free_quantity_in_decimal" : {
-      "type": ["null", "String"]
+      "type": ["null", "string"]
     },
     "plan_quantity_in_decimal" : {
-      "type": ["null", "String"]
+      "type": ["null", "string"]
     },
     "plan_unit_price_in_decimal" : {
-      "type": ["null", "String"]
+      "type": ["null", "string"]
     },
     "addons": {
       "type": ["null", "array"],
