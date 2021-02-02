@@ -35,7 +35,7 @@ class BaseChargebeeStream(BaseStream):
             "forced-replication-method": self.REPLICATION_METHOD,
             "valid-replication-keys": self.VALID_REPLICATION_KEYS,
             "inclusion": self.INCLUSION,
-            "selected-by-default": self.SELECTED_BY_DEFAULT,
+            #"selected-by-default": self.SELECTED_BY_DEFAULT,
             "table-key-properties": self.KEY_PROPERTIES
         }
 
