@@ -1,9 +1,9 @@
 from tap_chargebee.streams.base import BaseChargebeeStream
 
 
-class CustomersStream(BaseChargebeeStream):
-    TABLE = 'customers'
-    ENTITY = 'customer'
+class ItemsStream(BaseChargebeeStream):
+    TABLE = 'items'
+    ENTITY = 'item'
     REPLICATION_METHOD = 'INCREMENTAL'
     REPLICATION_KEY = 'updated_at'
     KEY_PROPERTIES = ['id']
@@ -12,7 +12,7 @@ class CustomersStream(BaseChargebeeStream):
     VALID_REPLICATION_KEYS = ['updated_at']
     INCLUSION = 'available'
     API_METHOD = 'GET'
-    SCHEMA = 'customers'
+    SCHEMA = 'items'
 
     def get_url(self):
-        return 'https://{}.chargebee.com/api/v2/customers'.format(self.config.get('site'))
+        return 'https://{}.chargebee.com/api/v2/items'.format(self.config.get('site'))

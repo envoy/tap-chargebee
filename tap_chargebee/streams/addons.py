@@ -12,6 +12,7 @@ class AddonsStream(BaseChargebeeStream):
     VALID_REPLICATION_KEYS = ['updated_at']
     INCLUSION = 'available'
     API_METHOD = 'GET'
+    SCHEMA = 'addons'
 
     def get_url(self):
         return 'https://{}.chargebee.com/api/v2/addons'.format(self.config.get('site'))

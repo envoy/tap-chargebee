@@ -35,7 +35,7 @@ class BaseChargebeeStream(BaseStream):
             "forced-replication-method": self.REPLICATION_METHOD,
             "valid-replication-keys": self.VALID_REPLICATION_KEYS,
             "inclusion": self.INCLUSION,
-            #"selected-by-default": self.SELECTED_BY_DEFAULT,
+            "selected-by-default": self.SELECTED_BY_DEFAULT,
             "table-key-properties": self.KEY_PROPERTIES
         }
 
@@ -154,6 +154,7 @@ class BaseChargebeeStream(BaseStream):
             bookmark_key = 'updated_at'
 
         LOGGER.info("Querying {} starting at {}".format(table, bookmark_date))
+        LOGGER.info("Params {}".format(params))
 
         while not done:
             max_date = to_date
@@ -215,3 +216,7 @@ class BaseChargebeeStream(BaseStream):
                 bookmark_date = max_date
 
         save_state(self.state)
+
+    def get_schema(self):
+        LOGGER.info("Function overidden {}".format(self.SCHEMA))
+        return self.load_schema_by_name(self.SCHEMA)

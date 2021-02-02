@@ -2,6 +2,7 @@ import singer
 import tap_framework
 import tap_chargebee.client
 import tap_chargebee.streams
+from tap_chargebee.streams.plans import PlansStream
 
 LOGGER = singer.get_logger()
 
@@ -18,8 +19,8 @@ def main():
     client = tap_chargebee.client.ChargebeeClient(args.config)
 
     runner = ChargebeeRunner(
-        args, client, tap_chargebee.streams.AVAILABLE_STREAMS
-        )
+        args, client, get_available_streams(args, client)
+    )
 
     if args.discover:
         runner.do_discover()
@@ -29,3 +30,18 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+
+def get_available_streams(self, cb_client):
+    AVAILABLE_STREAMS = tap_chargebee.streams.PLAN_MODEL_AVAILABLE_STREAMS
+    self.config['item_model'] = False
+    # temporary API to check Item model
+    response = cb_client.make_request(
+        url=PlansStream.get_url(self),
+        method=PlansStream.API_METHOD)
+
+    if 'api_error_code' in response.keys():
+        if response['api_error_code'] == 'configuration_incompatible':
+            AVAILABLE_STREAMS = tap_chargebee.streams.ITEM_MODEL_AVAILABLE_STREAMS
+            self.config['item_model'] = True
+    return AVAILABLE_STREAMS
