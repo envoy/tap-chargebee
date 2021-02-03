@@ -32,13 +32,13 @@ COMMON_AVAILABLE_STREAMS = [
     VirtualBankAccountsStream
 ]
 
-PLAN_MODEL_AVAILABLE_STREAMS = [
-                                   AddonsStream,
-                                   PlansStream
-                               ] + COMMON_AVAILABLE_STREAMS
+PLAN_MODEL_AVAILABLE_STREAMS = COMMON_AVAILABLE_STREAMS + [
+    AddonsStream,
+    PlansStream
+]
 
-ITEM_MODEL_AVAILABLE_STREAMS = [
-                                   ItemsStream,
-                                   ItemPricesStream,
-                                   ItemFamiliesStream
-                               ] + COMMON_AVAILABLE_STREAMS
+ITEM_MODEL_AVAILABLE_STREAMS = COMMON_AVAILABLE_STREAMS + [
+    ItemsStream,
+    ItemPricesStream,
+    ItemFamiliesStream
+]

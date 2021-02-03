@@ -17,7 +17,7 @@ class SubscriptionsStream(BaseChargebeeStream):
     def __init__(self, config, state, catalog, client):
         BaseChargebeeStream.__init__(self, config, state, catalog, client)
         if self.config['item_model']:
-            self.SCHEMA = 'item/subscriptions'
+            self.SCHEMA = 'item_model/subscriptions'
 
     def get_url(self):
         return 'https://{}.chargebee.com/api/v2/subscriptions'.format(self.config.get('site'))

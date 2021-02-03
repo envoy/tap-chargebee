@@ -85,7 +85,7 @@
       "trial_period_unit":{
          "type":[
             "null",
-            "optional"
+            "string"
          ]
       },
       "shipping_period":{
@@ -209,7 +209,7 @@
             "tax_profile_id":{
                "type":[
                   "null",
-                  "optional,string"
+                  "string"
                ]
             },
             "avalara_sale_type":{
