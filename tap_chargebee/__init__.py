@@ -2,7 +2,7 @@ import singer
 import tap_framework
 import tap_chargebee.client
 import tap_chargebee.streams
-from tap_chargebee.streams.plans import PlansStream
+from tap_chargebee.streams.configurations import ConfigurationsStream
 
 LOGGER = singer.get_logger()
 
@@ -33,15 +33,20 @@ if __name__ == '__main__':
 
 
 def get_available_streams(self, cb_client):
-    AVAILABLE_STREAMS = tap_chargebee.streams.PLAN_MODEL_AVAILABLE_STREAMS
-    self.config['item_model'] = False
-    # temporary API to check Item model
     response = cb_client.make_request(
-        url=PlansStream.get_url(self),
-        method=PlansStream.API_METHOD)
-
-    if 'api_error_code' in response.keys():
-        if response['api_error_code'] == 'configuration_incompatible':
-            AVAILABLE_STREAMS = tap_chargebee.streams.ITEM_MODEL_AVAILABLE_STREAMS
-            self.config['item_model'] = True
-    return AVAILABLE_STREAMS
+        url=ConfigurationsStream.get_url(self),
+        method=ConfigurationsStream.API_METHOD)
+    site_configurations = response['configurations']
+    for site_config in site_configurations:
+        if site_config.get('domain') == self.config.get('site'):
+            product_catalog_version = site_config.get('product_catalog_version')
+            if product_catalog_version == 'v2':
+                available_streams = tap_chargebee.streams.ITEM_MODEL_AVAILABLE_STREAMS
+                self.config['item_model'] = True
+            elif product_catalog_version == 'v1':
+                available_streams = tap_chargebee.streams.PLAN_MODEL_AVAILABLE_STREAMS
+                self.config['item_model'] = False
+    if self.config.get('item_model') is None:
+        raise RuntimeError('Product Catalog version not defined')
+    LOGGER.info("Model {}".format(self.config))
+    return available_streams

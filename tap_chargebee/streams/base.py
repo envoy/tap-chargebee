@@ -122,7 +122,7 @@ class BaseChargebeeStream(BaseStream):
         table = self.TABLE
         api_method = self.API_METHOD
         done = False
-        SYNC_INTERVAL_IN_MINS = 5
+        sync_interval_in_mins = 5
 
         # Attempt to get the bookmark date from the state file (if one exists and is supplied).
         LOGGER.info('Attempting to get the most recent bookmark_date for entity {}.'.format(self.ENTITY))
@@ -137,7 +137,8 @@ class BaseChargebeeStream(BaseStream):
 
         # Convert bookmarked start date to POSIX.
         bookmark_date_posix = int(bookmark_date.timestamp())
-        to_date_posix = int(datetime.now(pytz.utc) - timedelta(minutes=SYNC_INTERVAL_IN_MINS))
+        to_date = datetime.now(pytz.utc) - timedelta(minutes=sync_interval_in_mins)
+        to_date_posix = int(to_date.timestamp())
         sync_window = str([bookmark_date_posix, to_date_posix])
         # Create params for filtering
         if self.ENTITY == 'event':
