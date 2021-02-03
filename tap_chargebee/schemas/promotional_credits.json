@@ -16,6 +16,9 @@
     "amount": {
     	"type": ["null", "string"]
     },
+    "amount_in_decimal": {
+    	"type": ["null", "string"]
+    },
     "currency_code": {
     	"type": ["null", "string"]
     },

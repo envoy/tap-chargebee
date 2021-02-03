@@ -192,30 +192,6 @@
             "string"
          ]
       },
-      "plan_free_quantity_in_decimal":{
-         "type":[
-            "null",
-            "string"
-         ]
-      },
-      "plan_quantity_in_decimal":{
-         "type":[
-            "null",
-            "string"
-         ]
-      },
-      "plan_unit_price_in_decimal":{
-         "type":[
-            "null",
-            "string"
-         ]
-      },
-      "plan_amount_in_decimal":{
-         "type":[
-            "null",
-            "string"
-         ]
-      },
       "due_invoices_count":{
          "type":[
             "null",
@@ -262,7 +238,7 @@
       "meta_data":{
          "type":[
             "null",
-            "object"
+            "string"
          ]
       },
       "deleted":{

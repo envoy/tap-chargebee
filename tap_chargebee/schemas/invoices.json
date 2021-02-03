@@ -171,6 +171,15 @@
           },
           "object": {
             "type": ["null", "string"]
+          },
+          "amount_in_decimal": {
+            "type": ["null", "string"]
+          },
+          "quantity_in_decimal": {
+            "type": ["null", "string"]
+          },
+          "unit_amount_in_decimal": {
+            "type": ["null", "string"]
           }
         }
       }
@@ -292,6 +301,18 @@
           },
           "unit_amount": {
             "type": ["null", "integer"]
+          },
+          "starting_unit_in_decimal": {
+            "type": ["null", "string"]
+          },
+          "ending_unit_in_decimal": {
+            "type": ["null", "string"]
+          },
+          "quantity_used_in_decimal": {
+            "type": ["null", "string"]
+          },
+          "unit_amount_in_decimal": {
+            "type": ["null", "string"]
           }
         }
       }
