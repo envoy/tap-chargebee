@@ -12,7 +12,7 @@ class ItemFamiliesStream(BaseChargebeeStream):
     VALID_REPLICATION_KEYS = ['updated_at']
     INCLUSION = 'available'
     API_METHOD = 'GET'
-    SCHEMA = 'item_families'
+    SCHEMA = 'item_model/item_families'
 
     def get_url(self):
         return 'https://{}.chargebee.com/api/v2/item_families'.format(self.config.get('site'))

@@ -64,7 +64,7 @@ class BaseChargebeeStream(BaseStream):
             os.path.normpath(
                 os.path.join(
                     self.get_class_path(),
-                    '../schemas/{}.json'.format("cards"))))
+                    '../schemas/common/{}.json'.format("cards"))))
 
         refs = {"cards.json": cards}
 

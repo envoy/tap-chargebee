@@ -356,6 +356,9 @@
         },
         "invoice_owner_id": {
           "type": ["null", "string"]
+        },
+        "root_id": {
+          "type": ["null", "string"]
         }
       }
     }

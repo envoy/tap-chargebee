@@ -12,7 +12,7 @@ class SubscriptionsStream(BaseChargebeeStream):
     VALID_REPLICATION_KEYS = ['updated_at']
     INCLUSION = 'available'
     API_METHOD = 'GET'
-    SCHEMA = 'subscriptions'
+    SCHEMA = 'plan_model/subscriptions'
 
     def __init__(self, config, state, catalog, client):
         BaseChargebeeStream.__init__(self, config, state, catalog, client)

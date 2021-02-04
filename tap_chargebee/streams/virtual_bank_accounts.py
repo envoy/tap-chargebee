@@ -12,7 +12,7 @@ class VirtualBankAccountsStream(BaseChargebeeStream):
     VALID_REPLICATION_KEYS = ['updated_at']
     INCLUSION = 'available'
     API_METHOD = 'GET'
-    SCHEMA = 'virtual_bank_accounts'
+    SCHEMA = 'common/virtual_bank_accounts'
 
     def get_url(self):
         return 'https://{}.chargebee.com/api/v2/virtual_bank_accounts'.format(self.config.get('site'))
