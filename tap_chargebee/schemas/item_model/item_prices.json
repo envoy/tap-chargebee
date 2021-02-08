@@ -91,7 +91,7 @@
       "shipping_period":{
          "type":[
             "null",
-            "string"
+            "integer"
          ]
       },
       "shipping_period_unit":{
@@ -147,7 +147,7 @@
       "metadata":{
          "type":[
             "null",
-            "object"
+            "string"
          ]
       },
       "item_type":{
@@ -177,26 +177,32 @@
       "tiers":{
          "type":[
             "null",
-            "object"
+            "array"
          ],
-         "properties":{
-            "starting_unit":{
-               "type":[
-                  "null",
-                  "integer"
-               ]
-            },
-            "ending_unit":{
-               "type":[
-                  "null",
-                  "integer"
-               ]
-            },
-            "price":{
-               "type":[
-                  "null",
-                  "integer"
-               ]
+         "items":{
+            "type":[
+               "null",
+               "object"
+            ],
+            "properties":{
+               "starting_unit":{
+                  "type":[
+                     "null",
+                     "integer"
+                  ]
+               },
+               "ending_unit":{
+                  "type":[
+                     "null",
+                     "integer"
+                  ]
+               },
+               "price":{
+                  "type":[
+                     "null",
+                     "integer"
+                  ]
+               }
             }
          }
       },
