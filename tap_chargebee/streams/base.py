@@ -122,7 +122,7 @@ class BaseChargebeeStream(BaseStream):
         table = self.TABLE
         api_method = self.API_METHOD
         done = False
-        sync_interval_in_mins = 5
+        sync_interval_in_mins = 2
 
         # Attempt to get the bookmark date from the state file (if one exists and is supplied).
         LOGGER.info('Attempting to get the most recent bookmark_date for entity {}.'.format(self.ENTITY))
