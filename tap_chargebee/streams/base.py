@@ -152,7 +152,6 @@ class BaseChargebeeStream(BaseStream):
             bookmark_key = 'updated_at'
 
         LOGGER.info("Querying {} starting at {}".format(table, bookmark_date))
-        LOGGER.info("Params {}".format(params))
 
         while not done:
             max_date = to_date
@@ -209,5 +208,4 @@ class BaseChargebeeStream(BaseStream):
         save_state(self.state)
 
     def get_schema(self):
-        LOGGER.info("Function overidden {}".format(self.SCHEMA))
         return self.load_schema_by_name(self.SCHEMA)

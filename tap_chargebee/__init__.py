@@ -38,17 +38,12 @@ def get_available_streams(self, cb_client):
         url=configuration_url,
         method='GET')
     site_configurations = response['configurations']
-    # remove log
-    LOGGER.info("Response {}".format(response))
-    product_catalog_version = next(config['product_catalog_version'] for config in site_configurations if
-                                   config['domain'] == self.config.get('site'))
-
+    product_catalog_version = [config['product_catalog_version'] for config in site_configurations if
+                               config['domain'] == self.config.get('site')][0]
     if product_catalog_version == 'v2':
         available_streams = tap_chargebee.streams.ITEM_MODEL_AVAILABLE_STREAMS
         self.config['item_model'] = True
     else:
         available_streams = tap_chargebee.streams.PLAN_MODEL_AVAILABLE_STREAMS
         self.config['item_model'] = False
-    # remove log
-    LOGGER.info("Model {}".format(self.config))
     return available_streams
