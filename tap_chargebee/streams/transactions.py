@@ -13,6 +13,7 @@ class TransactionsStream(BaseChargebeeStream):
     INCLUSION = 'available'
     API_METHOD = 'GET'
     SCHEMA = 'common/transactions'
+    SORT_BY = 'updated_at'
 
     def get_url(self):
         return 'https://{}.chargebee.com/api/v2/transactions'.format(self.config.get('site'))

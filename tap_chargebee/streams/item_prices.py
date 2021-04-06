@@ -13,6 +13,7 @@ class ItemPricesStream(BaseChargebeeStream):
     INCLUSION = 'available'
     API_METHOD = 'GET'
     SCHEMA = 'item_model/item_prices'
+    SORT_BY = 'updated_at'
 
     def get_url(self):
         return 'https://{}.chargebee.com/api/v2/item_prices'.format(self.config.get('site'))

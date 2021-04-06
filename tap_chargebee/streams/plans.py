@@ -13,6 +13,7 @@ class PlansStream(BaseChargebeeStream):
     INCLUSION = 'available'
     API_METHOD = 'GET'
     SCHEMA = 'plan_model/plans'
+    SORT_BY = None
 
     def get_url(self):
         return 'https://{}.chargebee.com/api/v2/plans'.format(self.config.get('site'))

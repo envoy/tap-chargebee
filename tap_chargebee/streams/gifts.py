@@ -13,6 +13,7 @@ class GiftsStream(BaseChargebeeStream):
     INCLUSION = 'available'
     API_METHOD = 'GET'
     SCHEMA = 'common/gifts'
+    SORT_BY = None
 
     def get_url(self):
         return 'https://{}.chargebee.com/api/v2/gifts'.format(self.config.get('site'))

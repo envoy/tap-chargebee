@@ -13,6 +13,7 @@ class CustomersStream(BaseChargebeeStream):
     INCLUSION = 'available'
     API_METHOD = 'GET'
     SCHEMA = 'common/customers'
+    SORT_BY = 'updated_at'
 
     def get_url(self):
         return 'https://{}.chargebee.com/api/v2/customers'.format(self.config.get('site'))

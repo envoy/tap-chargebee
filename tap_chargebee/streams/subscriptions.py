@@ -13,6 +13,7 @@ class SubscriptionsStream(BaseChargebeeStream):
     INCLUSION = 'available'
     API_METHOD = 'GET'
     SCHEMA = 'plan_model/subscriptions'
+    SORT_BY = 'updated_at'
 
     def __init__(self, config, state, catalog, client):
         BaseChargebeeStream.__init__(self, config, state, catalog, client)

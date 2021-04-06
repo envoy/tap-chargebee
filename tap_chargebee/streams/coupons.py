@@ -13,6 +13,7 @@ class CouponsStream(BaseChargebeeStream):
     INCLUSION = 'available'
     API_METHOD = 'GET'
     SCHEMA = 'plan_model/coupons'
+    SORT_BY = 'created_at'
 
     def __init__(self, config, state, catalog, client):
         BaseChargebeeStream.__init__(self, config, state, catalog, client)

@@ -13,6 +13,7 @@ class ItemFamiliesStream(BaseChargebeeStream):
     INCLUSION = 'available'
     API_METHOD = 'GET'
     SCHEMA = 'item_model/item_families'
+    SORT_BY = None
 
     def get_url(self):
         return 'https://{}.chargebee.com/api/v2/item_families'.format(self.config.get('site'))

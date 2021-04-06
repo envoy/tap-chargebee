@@ -13,6 +13,7 @@ class PromotionalCreditsStream(BaseChargebeeStream):
     INCLUSION = 'available'
     API_METHOD = 'GET'
     SCHEMA = 'plan_model/promotional_credits'
+    SORT_BY = None
 
     def __init__(self, config, state, catalog, client):
         BaseChargebeeStream.__init__(self, config, state, catalog, client)

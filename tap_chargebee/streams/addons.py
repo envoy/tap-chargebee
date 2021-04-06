@@ -13,6 +13,7 @@ class AddonsStream(BaseChargebeeStream):
     INCLUSION = 'available'
     API_METHOD = 'GET'
     SCHEMA = 'plan_model/addons'
+    SORT_BY = None
 
     def get_url(self):
         return 'https://{}.chargebee.com/api/v2/addons'.format(self.config.get('site'))

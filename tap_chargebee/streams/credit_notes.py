@@ -13,6 +13,7 @@ class CreditNotesStream(BaseChargebeeStream):
     INCLUSION = 'available'
     API_METHOD = 'GET'
     SCHEMA = 'common/credit_notes'
+    SORT_BY = 'date'
 
     def get_url(self):
         return 'https://{}.chargebee.com/api/v2/credit_notes'.format(self.config.get('site'))
