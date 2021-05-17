@@ -101,7 +101,7 @@
     },
     "invoice_notes": {
       "type": ["null", "string"],
-      "maxLength": 1000
+      "maxLength": 2000
     },
     "taxable": {
       "type": ["null", "boolean"]

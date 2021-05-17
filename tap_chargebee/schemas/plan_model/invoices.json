@@ -582,9 +582,6 @@
     },
     "subscription_id": {
       "type": ["null", "string"]
-    },
-    "total": {
-      "type": ["null", "integer"]
     }
   }
 }
