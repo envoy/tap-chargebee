@@ -140,6 +140,7 @@ class BaseChargebeeStream(BaseStream):
         to_date = datetime.now(pytz.utc) - timedelta(minutes=sync_interval_in_mins)
         to_date_posix = int(to_date.timestamp())
         sync_window = str([bookmark_date_posix, to_date_posix])
+        LOGGER.info("Sync Window {} for schema {}".format(sync_window, table))
         # Create params for filtering
         if self.ENTITY == 'event':
             params = {"occurred_at[between]": sync_window}

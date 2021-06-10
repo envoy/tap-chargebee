@@ -43,7 +43,9 @@ def get_available_streams(self, cb_client):
     if product_catalog_version == 'v2':
         available_streams = tap_chargebee.streams.ITEM_MODEL_AVAILABLE_STREAMS
         self.config['item_model'] = True
+        LOGGER.info('Item Model')
     else:
         available_streams = tap_chargebee.streams.PLAN_MODEL_AVAILABLE_STREAMS
         self.config['item_model'] = False
+        LOGGER.info('Plan Model')
     return available_streams
