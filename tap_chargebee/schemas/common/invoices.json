@@ -158,7 +158,7 @@
             "type": ["null", "integer"]
           },
           "tax_rate": {
-            "type": ["null", "integer"]
+            "type": ["null", "integer", "number"]
           },
           "amount": {
             "type": ["null", "integer"]
@@ -242,8 +242,14 @@
           "coupon_id": {
             "type": ["null", "string"]
           },
+          "entity_id": {
+            "type": ["null", "string"]
+          },
           "discount_amount": {
             "type": ["null", "integer"]
+          },
+          "object": {
+            "type": ["null", "string"]
           }
         }
       }
@@ -277,7 +283,7 @@
             "type": ["null", "string"]
           },
           "tax_rate": {
-            "type": ["null", "integer"]
+            "type": ["null", "integer", "number"]
           },
           "is_partial_tax_applied": {
             "type": ["null", "boolean"]
@@ -577,6 +583,9 @@
           "type": ["null", "string"]
         },
         "validation_status": {
+          "type": ["null", "string"]
+        },
+        "object": {
           "type": ["null", "string"]
         }
       }

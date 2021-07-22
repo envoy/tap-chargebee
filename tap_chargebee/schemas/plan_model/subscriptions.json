@@ -43,6 +43,9 @@
       "type": ["null", "string"],
       "format": "date-time"
     },
+    "trial_end_action": {
+      "type": ["null", "string"]
+    },
     "current_term_start": {
       "type": ["null", "string"],
       "format": "date-time"
@@ -200,6 +203,9 @@
     "auto_close_invoices": {
       "type": ["null", "boolean"]
     },
+    "channel" : {
+      "type": ["null", "string"]
+    },
     "addons": {
       "type": ["null", "array"],
       "items": {
@@ -356,6 +362,9 @@
           "type": ["null", "string"]
         },
         "validation_status": {
+          "type": ["null", "string"]
+        },
+        "object": {
           "type": ["null", "string"]
         }
       }

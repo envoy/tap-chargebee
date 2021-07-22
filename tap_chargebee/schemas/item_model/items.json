@@ -132,6 +132,13 @@
             "string"
          ]
       },
+      "archivable":{
+         "type":[
+            "null",
+            "boolean",
+            "string"
+         ]
+      },
       "object":{
          "type":[
             "null",

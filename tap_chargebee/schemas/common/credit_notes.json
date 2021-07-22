@@ -90,6 +90,15 @@
     "vat_number_prefix": {
       "type": ["null", "string"]
     },
+    "base_currency_code": {
+      "type": ["null", "string"]
+    },
+    "exchange_rate": {
+      "type": ["null", "number"]
+    },
+    "object": {
+      "type": ["null", "string"]
+    },
     "line_items": {
       "type": ["null", "array"],
       "items": {
@@ -162,6 +171,9 @@
           },
           "customer_id": {
             "type": ["null", "string"]
+          },
+          "object": {
+            "type": ["null", "string"]
           }
         }
       }
@@ -182,6 +194,9 @@
           },
           "entity_id": {
             "type": ["null", "string"]
+          },
+          "object": {
+            "type": ["null", "string"]
           }
         }
       }
@@ -200,8 +215,14 @@
           "coupon_id": {
             "type": ["null", "string"]
           },
+          "entity_id": {
+            "type": ["null", "string"]
+          },
           "discount_amount": {
             "type": ["null", "integer"]
+          },
+          "object": {
+            "type": ["null", "string"]
           }
         }
       }
