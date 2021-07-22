@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.3.0
+  * Added comments stream [#52](https://github.com/singer-io/tap-chargebee/pull/52)
+  * Added include_deleted configuration [#58](https://github.com/singer-io/tap-chargebee/pull/58)
+  * Added undocumented fields [#69](https://github.com/singer-io/tap-chargebee/pull/69)
+
 ## 1.2.2
   * Update the schema glob so that we include all schemas in the package distribution [#73](https://github.com/singer-io/tap-chargebee/pull/73)
 
