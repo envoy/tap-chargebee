@@ -4,6 +4,7 @@ import json
 import os
 
 import pytz
+from datetime import datetime, timedelta
 
 from .util import Util
 from dateutil.parser import parse
@@ -149,6 +150,7 @@ class BaseChargebeeStream(BaseStream):
         table = self.TABLE
         api_method = self.API_METHOD
         done = False
+        sync_interval_in_mins = 2
 
         # Attempt to get the bookmark date from the state file (if one exists and is supplied).
         LOGGER.info('Attempting to get the most recent bookmark_date for entity {}.'.format(self.ENTITY))
@@ -163,7 +165,7 @@ class BaseChargebeeStream(BaseStream):
 
         # Convert bookmarked start date to POSIX.
         bookmark_date_posix = int(bookmark_date.timestamp())
-        
+        to_date = datetime.now(pytz.utc) - timedelta(minutes=sync_interval_in_mins)
         # Create params for filtering
         if self.ENTITY == 'event':
             params = {"occurred_at[after]": bookmark_date_posix}
@@ -222,7 +224,7 @@ class BaseChargebeeStream(BaseStream):
                 singer.write_records(table, to_write)
 
                 ctr.increment(amount=len(to_write))
-                
+
                 for item in to_write:
                     #if item.get(bookmark_key) is not None:
                     max_date = max(
@@ -230,6 +232,10 @@ class BaseChargebeeStream(BaseStream):
                         parse(item.get(bookmark_key))
                     )
 
+            # update max_date with minimum of (max_replication_key) or (now - 2 minutes)
+            # this will make sure that bookmark does not go beyond (now - 2 minutes)
+            # so, no data will be missed due to API latency
+            max_date = min(max_date, to_date)
             self.state = incorporate(
                 self.state, table, 'bookmark_date', max_date)
 
