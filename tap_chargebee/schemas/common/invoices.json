@@ -694,23 +694,26 @@
       }
     },
     "linked_taxes_withheld": {
-      "type": ["null", "object"],
-      "properties":{
-        "id": {
-          "type": ["null", "string"]
-        },
-        "amount": {
-          "type": ["null", "string"]
-        },
-        "description": {
-          "type": ["null", "string"]
-        },
-        "date": {
-          "type": ["null", "string"],
-          "format": "date-time"
-        },
-        "reference_number": {
-          "type": ["null", "string"]
+      "type": ["null", "array"],
+      "items": {
+        "type": ["null", "object"],
+        "properties":{
+          "id": {
+            "type": ["null", "string"]
+          },
+          "amount": {
+            "type": ["null", "string"]
+          },
+          "description": {
+            "type": ["null", "string"]
+          },
+          "date": {
+            "type": ["null", "string"],
+            "format": "date-time"
+          },
+          "reference_number": {
+            "type": ["null", "string"]
+          }
         }
       }
     },

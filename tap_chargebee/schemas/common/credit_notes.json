@@ -413,23 +413,26 @@
       }
     },
     "linked_tax_withheld_refunds": {
-      "type": ["null", "object"],
-      "properties":{
-        "id": {
-          "type": ["null", "string"]
-        },
-        "amount": {
-          "type": ["null", "integer"]
-        },
-        "date": {
-          "type": ["null", "string"]
-        },
-        "invoice_date": {
-          "type": ["null", "string"],
-          "format": "date-time"
-        },
-        "reference_number": {
-          "type": ["null", "string"]
+      "type": ["null", "array"],
+      "items": {
+        "type": ["null", "object"],
+        "properties":{
+          "id": {
+            "type": ["null", "string"]
+          },
+          "amount": {
+            "type": ["null", "integer"]
+          },
+          "date": {
+            "type": ["null", "string"]
+          },
+          "invoice_date": {
+            "type": ["null", "string"],
+            "format": "date-time"
+          },
+          "reference_number": {
+            "type": ["null", "string"]
+          }
         }
       }
     },

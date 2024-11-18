@@ -52,7 +52,7 @@ class ChargebeeIncludeDeletedTest(ChargebeeBaseTest):
         Testing that 2 sync have difference in data for stream invoices
         """
         # Expected stream is only customers
-        expected_streams = ["customers"]
+        expected_streams = ["invoices"]
 
         # default value
         self.include_deleted = True

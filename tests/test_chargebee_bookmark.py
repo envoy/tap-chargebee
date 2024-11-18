@@ -124,7 +124,7 @@ class ChargebeeBookmarkTest(ChargebeeBaseTest):
 
                     # Verify the second sync bookmark is Equal to the first sync bookmark
                     # As we have implemented (now - 2 minutes) as bookmark, thus, bookmark will not be same for both syncs
-                    # self.assertEqual(second_bookmark_value, first_bookmark_value) # assumes no changes to data during test
+                    self.assertEqual(second_bookmark_value, first_bookmark_value) # assumes no changes to data during test
 
                     for record in first_sync_messages:
                         # Verify the first sync bookmark value is the max replication key value for a given stream
