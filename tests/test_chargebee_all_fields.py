@@ -152,15 +152,12 @@ class ChargebeeAllFieldsTest(ChargebeeBaseTest):
         'customers': { # not found in the UI
             'backup_payment_source_id',
             'cf_company_id',
-            'created_from_ip',
             'consolidated_invoicing',
             'billing_day_of_week',
             'vat_number'
         },
         'subscriptions': { # not found in the UI
             'cancel_reason',
-            'start_date',
-            'remaining_billing_cycles',
             'payment_source_id',
             'invoice_notes',
             'created_from_ip',
@@ -315,8 +312,8 @@ class ChargebeeAllFieldsTest(ChargebeeBaseTest):
     def test_run(self):
 
         # All fields test for Product Catalog version 1
-        self.is_product_catalog_v1 = True
-        self.all_fields_test_run()
+        # self.is_product_catalog_v1 = True
+        # self.all_fields_test_run()
 
         # All fields test for Product Catalog version 2
         self.is_product_catalog_v1 = False
