@@ -233,7 +233,7 @@ class ChargebeeClient:
 
             next_offset = response.get("next_offset")
             if not next_offset:
-                LOGGER.info("Final offset reached. Ending sync.")
+                LOGGER.info("Final offset reached. Ending Pagination.")
                 break
 
             LOGGER.info("Advancing by one offset. %s", next_offset)

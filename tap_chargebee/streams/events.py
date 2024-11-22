@@ -44,7 +44,8 @@ class EventsStream(BaseChargebeeStream):
         custom_fields = {}
         event_custom_fields = {}
         if self.ENTITY == 'event':
-            content_obj = record['event_type'].rsplit("_", 1)[0] # payment_source_added -> payment_source, customer_created -> customer
+            # payment_source_added -> payment_source, customer_created -> customer
+            content_obj = record['event_type'].rsplit("_", 1)[0]
 
 
             if content_obj in listOfCustomFieldObj:

@@ -12,7 +12,8 @@ from datetime import datetime
 LOGGER = singer.get_logger()
 UNIX_SECONDS_INTEGER_DATETIME_PARSING = "unix-seconds-integer-datetime-parsing"
 DATETIME_FORMAT = "%Y-%m-%dT%H:%M:%SZ"
-LOOKBACK_WINDOW = 2  # 2 minutes
+# 2 minutes lookback window to avoid missing records
+LOOKBACK_WINDOW = 2
 
 
 class BaseChargebeeStream:

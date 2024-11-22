@@ -90,6 +90,7 @@ def do_sync(config: dict, catalog: Catalog, state: dict, client: ChargebeeClient
         stream_name = catalog_entry.tap_stream_id
 
         singer.set_currently_syncing(state, stream_name)
+        singer.write_state(state)
         singer.write_schema(
             stream_name, catalog_entry.schema.to_dict(), key_properties, replication_key
         )
