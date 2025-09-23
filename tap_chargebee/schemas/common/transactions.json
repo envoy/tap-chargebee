@@ -20,6 +20,12 @@
     "payment_method": {
       "type": ["null", "string"]
     },
+    "iin": {
+      "type": ["null", "string"]
+    },
+    "last4": {
+      "type": ["null", "string"]
+    },
     "reference_number": {
       "type": ["null", "string"]
     },
@@ -51,6 +57,12 @@
     },
     "fraud_flag": {
       "type": ["null", "string"]
+    },
+    "initiator_type": {
+      "type": ["null", "string"]
+    },
+    "three_d_secure": {
+      "type": ["null", "boolean"]
     },
     "error_code": {
       "type": ["null", "string"]
@@ -99,6 +111,37 @@
     "refunded_txn_id": {
       "type": ["null", "string"]
     },
+    "authorization_reason": {
+      "type": ["null", "string"]
+    },
+    "voided_at": {
+      "type": ["null", "string"],
+      "format": "date-time"
+    },
+    "reversal_transaction_id": {
+      "type": ["null", "string"]
+    },
+    "reference_authorization_id": {
+      "type": ["null", "string"]
+    },
+    "amount_capturable": {
+      "type": ["null", "string"]
+    },
+    "merchant_reference_id": {
+      "type": ["null", "string"]
+    },
+    "custom_payment_method_id": {
+      "type": ["null", "string"]
+    },
+    "business_entity_id": {
+      "type": ["null", "string"]
+    },
+    "payment_method_details": {
+      "type": ["null", "string"]
+    },
+    "custom_payment_method_name": {
+      "type": ["null", "string"]
+    },
     "linked_invoices": {
       "type": ["null", "array"],
       "items": {
@@ -116,7 +159,7 @@
           },
           "invoice_date": {
             "type": ["null", "string"],
-            "format": "date-times"
+            "format": "date-time"
           },
           "invoice_total": {
             "type": ["null", "integer"]
@@ -143,6 +186,9 @@
             "format": "date-time"
           },
           "cn_reason_code": {
+            "type": ["null", "string"]
+          },
+          "cn_create_reason_code": {
             "type": ["null", "string"]
           },
           "cn_date": {
@@ -179,6 +225,71 @@
           "txn_amount": {
             "type": ["null", "integer"]
           }
+        }
+      }
+    },
+    "linked_payments": {
+      "type": ["null", "array"],
+      "items": {
+        "type": ["null", "object"],
+        "properties": {
+          "id": {
+            "type": ["null", "string"]
+          },
+          "status": {
+            "type": ["null", "string"]
+          },
+          "amount": {
+            "type": ["null", "integer"]
+          },
+          "date": {
+            "type": ["null", "string"],
+            "format": "date-time"
+          }
+        }
+      }
+    }
+  },
+  "error_detail": {
+    "type": ["null", "array"],
+    "items": {
+      "type": ["null", "object"],
+      "properties": {
+        "request_id": {
+          "type": ["null", "string"]
+        },
+        "error_category": {
+          "type": ["null", "string"]
+        },
+        "error_message": {
+          "type": ["null", "integer"]
+        },
+        "decline_code": {
+          "type": ["null", "string"]
+        },
+        "decline_message": {
+          "type": ["null", "string"]
+        },
+        "network_error_code": {
+          "type": ["null", "integer"]
+        },
+        "network_error_message": {
+          "type": ["null", "string"]
+        },
+        "error_field": {
+          "type": ["null", "string"]
+        },
+        "recommendation_code": {
+          "type": ["null", "integer"]
+        },
+        "recommendation_message": {
+          "type": ["null", "string"]
+        },
+        "processor_error_code": {
+          "type": ["null", "string"]
+        },
+        "processor_error_message": {
+          "type": ["null", "integer"]
         }
       }
     }

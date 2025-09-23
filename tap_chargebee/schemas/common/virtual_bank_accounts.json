@@ -5,59 +5,51 @@
     "id": {
       "type": ["null", "string"]
     },
-    "name": {
+    "customer_id": {
       "type": ["null", "string"]
     },
-    "description": {
+    "email": {
       "type": ["null", "string"]
     },
-    "price": {
+    "scheme": {
+      "type": ["null", "string"]
+    },
+    "bank_name": {
+      "type": ["null", "string"]
+    },
+    "account_number": {
+      "type": ["null", "string"]
+    },
+    "routing_number": {
+      "type": ["null", "string"]
+    },
+    "swift_code": {
+      "type": ["null", "string"]
+    },
+    "gateway": {
+      "type": ["null", "string"]
+    },
+    "gateway_account_id": {
+      "type": ["null", "string"]
+    },
+    "resource_version": {
       "type": ["null", "integer"]
-    },
-    "period": {
-      "type": ["null", "integer"]
-    },
-    "period_unit": {
-      "type": ["null", "string"]
-    },
-    "trial_period": {
-      "type": ["null", "integer"]
-    },
-    "trial_period_unit": {
-      "type": ["null", "string"]
-    },
-    "charge_model": {
-      "type": ["null", "string"]
-    },
-    "free_quantity": {
-      "type": ["null", "integer"]
-    },
-    "setup_cost": {
-      "type": ["null", "integer"]
-    },
-    "status": {
-      "type": ["null", "string"]
-    },
-    "billing_cycles": {
-      "type": ["null", "integer"]
-    },
-    "redirect_url": {
-      "type": ["null", "string"]
-    },
-    "sku": {
-      "type": ["null", "string"]
     },
     "updated_at": {
       "type": ["null", "string"],
       "format": "date-time"
     },
-    "invoice_notes": {
+    "created_at": {
+      "type": ["null", "string"],
+      "format": "date-time"
+    },
+    "reference_id": {
       "type": ["null", "string"]
     },
-    "taxable": {
+    "deleted": {
       "type": ["null", "boolean"]
     },
-    "tax_profile_id": {
+    "object": {
       "type": ["null", "string"]
     }
   }

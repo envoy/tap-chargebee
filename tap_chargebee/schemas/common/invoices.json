@@ -8,6 +8,16 @@
     "po_number": {
       "type": ["null", "string"]
     },
+    "channel":{
+      "type": ["null", "string"]
+    },
+    "business_entity_id":{
+      "type": ["null", "string"]
+    },
+    "generated_at": {
+      "type": ["null", "string"],
+      "format": "date-time"
+    },
     "customer_id": {
       "type": ["null", "string"]
     },
@@ -80,8 +90,20 @@
     "sub_total": {
       "type": ["null", "integer"]
     },
+    "sub_total_in_local_currency": {
+      "type": ["null", "integer"]
+    },
+    "total_in_local_currency": {
+      "type": ["null", "integer"]
+    },
+    "local_currency_code": {
+      "type": ["null", "string"]
+    },
     "tax": {
       "type": ["null", "integer"]
+    },
+    "local_currency_exchange_rate": {
+      "type": ["null", "string"]
     },
     "first_invoice": {
       "type": ["null", "boolean"]
@@ -99,8 +121,17 @@
     "round_off_amount": {
       "type": ["null", "integer"]
     },
+    "payment_owner": {
+      "type": ["null", "string"]
+    },
+    "void_reason_code": {
+      "type": ["null", "string"]
+    },
     "deleted": {
       "type": ["null", "boolean"]
+    },
+    "vat_number_prefix": {
+      "type": ["null", "string"]
     },
     "is_gifted": {
       "type": ["null", "boolean"]
@@ -140,7 +171,7 @@
             "type": ["null", "integer"]
           },
           "tax_rate": {
-            "type": ["null", "integer"]
+            "type": ["null", "number"]
           },
           "amount": {
             "type": ["null", "integer"]
@@ -154,6 +185,9 @@
           "description": {
             "type": ["null", "string"]
           },
+          "entity_description": {
+            "type": ["null", "string"]
+          },
           "entity_type": {
             "type": ["null", "string"]
           },
@@ -163,10 +197,22 @@
           "entity_id": {
             "type": ["null", "string"]
           },
+          "customer_id": {
+            "type": ["null", "string"]
+          },
           "pricing_model": {
             "type": ["null", "string"]
           },
           "object": {
+            "type": ["null", "string"]
+          },
+          "amount_in_decimal": {
+            "type": ["null", "string"]
+          },
+          "quantity_in_decimal": {
+            "type": ["null", "string"]
+          },
+          "unit_amount_in_decimal": {
             "type": ["null", "string"]
           }
         }
@@ -209,8 +255,14 @@
           "coupon_id": {
             "type": ["null", "string"]
           },
+          "entity_id": {
+            "type": ["null", "string"]
+          },
           "discount_amount": {
             "type": ["null", "integer"]
+          },
+          "object": {
+            "type": ["null", "string"]
           }
         }
       }
@@ -244,6 +296,15 @@
             "type": ["null", "string"]
           },
           "tax_rate": {
+            "type": ["null", "integer", "number"]
+          },
+          "is_partial_tax_applied": {
+            "type": ["null", "boolean"]
+          },
+          "is_non_compliance_tax": {
+            "type": ["null", "boolean"]
+          },
+          "taxable_amount": {
             "type": ["null", "integer"]
           },
           "tax_amount": {
@@ -256,6 +317,47 @@
             "type": ["null", "string"]
           },
           "tax_juris_code": {
+            "type": ["null", "string"]
+          },
+          "tax_amount_in_local_currency": {
+            "type": ["null", "integer"]
+          },
+          "local_currency_code": {
+            "type": ["null", "string"]
+          }
+        }
+      }
+    },
+    "line_item_tiers": {
+      "type": ["null", "array"],
+      "items": {
+        "type": ["null", "object"],
+        "properties": {
+          "line_item_id": {
+            "type": ["null", "string"]
+          },
+          "starting_unit": {
+            "type": ["null", "integer"]
+          },
+          "ending_unit": {
+            "type": ["null", "integer"]
+          },
+          "quantity_used": {
+            "type": ["null", "integer"]
+          },
+          "unit_amount": {
+            "type": ["null", "integer"]
+          },
+          "starting_unit_in_decimal": {
+            "type": ["null", "string"]
+          },
+          "ending_unit_in_decimal": {
+            "type": ["null", "string"]
+          },
+          "quantity_used_in_decimal": {
+            "type": ["null", "string"]
+          },
+          "unit_amount_in_decimal": {
             "type": ["null", "string"]
           }
         }
@@ -289,6 +391,33 @@
         }
       }
     },
+    "dunning_attempts": {
+      "type": ["null", "array"],
+      "items": {
+        "type": ["null", "object"],
+        "properties": {
+          "attempt": {
+            "type": ["null", "integer"]
+          },
+          "transaction_id": {
+            "type": ["null", "string"]
+          },
+          "dunning_type": {
+            "type": ["null", "string"]
+          },
+          "created_at": {
+            "type": ["null", "string"],
+            "format": "date-time"
+          },
+          "txn_status": {
+            "type": ["null", "string"]
+          },
+          "txn_amount": {
+            "type": ["null", "integer"]
+          }
+        }
+      }
+    },
     "applied_credits": {
       "type": ["null", "array"],
       "items": {
@@ -305,6 +434,9 @@
             "format": "date-time"
           },
           "cn_reason_code": {
+            "type": ["null", "string"]
+          },
+          "cn_create_reason_code": {
             "type": ["null", "string"]
           },
           "cn_date": {
@@ -326,6 +458,9 @@
             "type": ["null", "string"]
           },
           "cn_reason_code": {
+            "type": ["null", "string"]
+          },
+          "cn_create_reason_code": {
             "type": ["null", "string"]
           },
           "cn_date": {
@@ -352,6 +487,9 @@
           "cn_reason_code": {
             "type": ["null", "string"]
           },
+          "cn_create_reason_code": {
+            "type": ["null", "string"]
+          },
           "cn_date": {
             "type": ["null", "string"],
             "format": "date-time"
@@ -373,7 +511,13 @@
           "id": {
             "type": ["null", "string"]
           },
+          "document_number": {
+            "type": ["null", "string"]
+          },
           "status": {
+            "type": ["null", "string"]
+          },
+          "order_type": {
             "type": ["null", "string"]
           },
           "reference_id": {
@@ -451,7 +595,10 @@
         "zip": {
           "type": ["null", "string"]
         },
-        "validation_status,": {
+        "validation_status": {
+          "type": ["null", "string"]
+        },
+        "object": {
           "type": ["null", "string"]
         }
       }
@@ -521,8 +668,123 @@
     "subscription_id": {
       "type": ["null", "string"]
     },
-    "total": {
-      "type": ["null", "integer"]
+    "einvoice": {
+      "type": ["null", "object"],
+      "properties":{
+        "id": {
+          "type": ["null", "string"]
+        },
+        "status": {
+          "type": ["null", "string"]
+        },
+        "message": {
+          "type": ["null", "string"]
+        }
+      }
+    },
+    "statement_descriptor": {
+      "type": ["null", "object"],
+      "properties":{
+        "id": {
+          "type": ["null", "string"]
+        },
+        "descriptor": {
+          "type": ["null", "string"]
+        }
+      }
+    },
+    "linked_taxes_withheld": {
+      "type": ["null", "array"],
+      "items": {
+        "type": ["null", "object"],
+        "properties":{
+          "id": {
+            "type": ["null", "string"]
+          },
+          "amount": {
+            "type": ["null", "string"]
+          },
+          "description": {
+            "type": ["null", "string"]
+          },
+          "date": {
+            "type": ["null", "string"],
+            "format": "date-time"
+          },
+          "reference_number": {
+            "type": ["null", "string"]
+          }
+        }
+      }
+    },
+    "tax_origin": {
+      "type": ["null", "object"],
+      "properties":{
+        "country": {
+          "type": ["null", "string"]
+        },
+        "registration_number": {
+          "type": ["null", "string"]
+        }
+      }
+    },
+    "site_details_at_creation": {
+      "type": ["null", "object"],
+      "properties":{
+        "timezone": {
+          "type": ["null", "string"]
+        },
+        "organization_address": {
+          "type": ["null","object"],
+          "properties": {
+            "first_name": {
+              "type": ["null", "string"]
+            },
+            "last_name": {
+              "type": ["null", "string"]
+            },
+            "email": {
+              "type": ["null", "string"]
+            },
+            "company": {
+              "type": ["null", "string"]
+            },
+            "phone": {
+              "type": ["null", "string"]
+            },
+            "line1": {
+              "type": ["null", "string"]
+            },
+            "line2": {
+              "type": ["null", "string"]
+            },
+            "line3": {
+              "type": ["null", "string"]
+            },
+            "city": {
+              "type": ["null", "string"]
+            },
+            "state_code": {
+              "type": ["null", "string"]
+            },
+            "state": {
+              "type": ["null", "string"]
+            },
+            "country": {
+              "type": ["null", "string"]
+            },
+            "zip": {
+              "type": ["null", "string"]
+            },
+            "validation_status": {
+              "type": ["null", "string"]
+            },
+            "object": {
+              "type": ["null", "string"]
+            }
+          }
+        }
+      }
     }
   }
 }

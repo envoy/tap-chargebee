@@ -11,9 +11,12 @@ This tap:
   - [Addons](https://apidocs.chargebee.com/docs/api/addons)
   - [Coupons](https://apidocs.chargebee.com/docs/api/coupons)
   - [Credit Notes](https://apidocs.chargebee.com/docs/api/credit_notes)
+  - [Comments](https://apidocs.chargebee.com/docs/api/comments)  
   - [Customers](https://apidocs.chargebee.com/docs/api/customers)
   - [Events](https://apidocs.chargebee.com/docs/api/events)
+  - [Gifts](https://apidocs.chargebee.com/docs/api/gifts)
   - [Invoices](https://apidocs.chargebee.com/docs/api/invoices)
+  - [Orders](https://apidocs.chargebee.com/docs/api/orders)
   - [Payment Sources](https://apidocs.chargebee.com/docs/api/payment_sources)
   - [Plans](https://apidocs.chargebee.com/docs/api/plans)
   - [Subscriptions](https://apidocs.chargebee.com/docs/api/subscriptions)
@@ -36,18 +39,24 @@ This tap:
 
    ```json
     {
-        "start_date": "2010-01-01",
+        "start_date": "2010-01-01T00:00:00Z",
         "api_key": "<Chargebee API Key>",
-        "site": "<Chargebee Site>"
+        "site": "<Chargebee Site>",
+        "include_deleted": "True|False",
+        "request_timeout": 300
     }
     ```
 
-   The `start_date` specifies the date at which the tap will begin pulling data
+   The `start_date` specifies the date in ISO(YYYY-mm-ddTHH:MM:SSZ) format at which the tap will begin pulling data
    (for those resources that support this).
 
    The `api_key` is the API key for your Chargebee site.
 
    The `site` parameter represents the name of your specific Chargebee site (e.g. `https://{site}.chargebee.com/api/v2/subscriptions`)
+
+   The `include_deleted` is an optional flag to ask if you want deleted records of all streams or not. Default: true 
+
+   The `request_timeout` is an optional paramater to set timeout for requests. Default: 300 seconds
 
 4. Run the Tap in Discovery Mode
 
