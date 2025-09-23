@@ -8,6 +8,9 @@
     "name": {
       "type": ["null", "string"]
     },
+    "invoice_name": {
+      "type": ["null", "string"]
+    },
     "discount_type": {
       "type": ["null", "string"]
     },
@@ -17,8 +20,15 @@
     "discount_amount": {
       "type": ["null", "number"]
     },
+    "currency_code": {
+      "type": ["null", "string"]
+    },
     "duration_type": {
       "type": ["null", "string"]
+    },
+    "valid_till": {
+      "type": ["null", "string"],
+      "format": "date-time"
     },
     "duration_month": {
       "type": ["null", "integer"]
@@ -56,11 +66,38 @@
       "type": ["null", "string"],
       "format": "date-time"
     },
+    "included_in_mrr": {
+      "type": ["null", "boolean"]
+    },
+    "period": {
+      "type": ["null", "integer"]
+    },
+    "period_unit": {
+      "type": ["null", "string"]
+    },
     "object": {
       "type": ["null", "string"]
     },
     "redemptions": {
       "type": ["null", "integer"]
+    },
+    "plan_ids": {
+      "type": ["null", "array"],
+      "items": {
+        "type": ["null", "string"]
+      }
+    },
+    "addon_ids": {
+      "type": ["null", "array"],
+      "items": {
+        "type": ["null", "string"]
+      }
+    }, 
+    "invoice_notes": {
+      "type": ["null", "string"]
+    },
+    "meta_data": {
+      "type": ["null", "string"]
     }
   }
 }
