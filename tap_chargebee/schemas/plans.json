@@ -59,6 +59,122 @@
     },
     "tax_profile_id": {
       "type": ["null", "string"]
+    },
+    "addon_applicability": {
+      "type": ["null", "string"]
+    },
+    "cf_app": {
+      "type": ["null", "string"]
+    },
+    "cf_plan_level": {
+      "type": ["null", "string"]
+    },
+    "currency_code": {
+      "type": ["null", "string"]
+    },
+    "enabled_in_hosted_pages": {
+      "type": ["null", "boolean"]
+    },
+    "enabled_in_portal": {
+      "type": ["null", "boolean"]
+    },
+    "giftable": {
+      "type": ["null", "boolean"]
+    },
+    "invoice_name": {
+      "type": ["null", "string"]
+    },
+    "is_shippable": {
+      "type": ["null", "boolean"]
+    },
+    "meta_data": {
+      "type": ["null", "string"]
+    },
+    "object": {
+      "type": ["null", "string"]
+    },
+    "pricing_model": {
+      "type": ["null", "string"]
+    },
+    "resource_version": {
+      "type": ["null", "integer"]
+    },
+    "show_description_in_invoices": {
+      "type": ["null", "boolean"]
+    },
+    "show_description_in_quotes": {
+      "type": ["null", "boolean"]
+    },
+    "tiers": {
+      "type": ["null", "array"],
+      "items": {
+        "type": ["null", "object"],
+        "properties": {
+          "starting_unit": {
+            "type": ["null", "integer"]
+          },
+          "ending_unit": {
+            "type": ["null", "integer"]
+          },
+          "price": {
+            "type": ["null", "integer"]
+          },
+          "object": {
+            "type": ["null", "string"]
+          }
+        }
+      }
+    },
+    "applicable_addons": {
+      "type": ["null", "array"],
+      "items": {
+        "type": ["null", "object"],
+        "properties": {
+          "id": {
+            "type": ["null", "string"]
+          }
+        }
+      }
+    },
+    "attached_addons": {
+      "type": ["null", "array"],
+      "items": {
+        "type": ["null", "object"],
+        "properties": {
+          "id": {
+            "type": ["null", "string"]
+          },
+          "quantity": {
+            "type": ["null", "integer"]
+          },
+          "billing_cycles": {
+            "type": ["null", "integer"]
+          },
+          "type": {
+            "type": ["null", "string"]
+          }
+        }
+      }
+    },
+    "event_based_addons": {
+      "type": ["null", "array"],
+      "items": {
+        "type": ["null", "object"],
+        "properties": {
+          "id": {
+            "type": ["null", "string"]
+          },
+          "quantity": {
+            "type": ["null", "integer"]
+          },
+          "on_event": {
+            "type": ["null", "string"]
+          },
+          "charge_once": {
+            "type": ["null", "boolean"]
+          }
+        }
+      }
     }
   }
 }
